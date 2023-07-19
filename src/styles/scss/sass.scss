@@ -1,8 +1,14 @@
-$navyPurple: #110a30;
+$navyPurple: #090325;
 $lightNP: #2a2446;
 $white: #ffffff;
 $orange: #dc5846;
 
 h1 {
   color: $orange;
+}
+p {
+  color: $lightNP;
+}
+.canvas {
+  background-color: $navyPurple;
 }

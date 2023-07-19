@@ -36,12 +36,16 @@
     ]
   },
   "devDependencies": {
+    "@react-three/drei": "^9.79.0",
+    "@react-three/fiber": "^8.13.5",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.3",
     "gulp-clean-css": "^4.3.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "node-sass": "^7.0.3",
-    "sass": "^1.63.6"
+    "react-three-fiber": "^6.0.13",
+    "sass": "^1.63.6",
+    "three": "^0.154.0"
   }
 }
