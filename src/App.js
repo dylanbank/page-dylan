@@ -7,20 +7,19 @@ import "./styles/css/sass.css";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Dylan Windebank</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Canvas className="canvas">
-        <Cube />
-      </Canvas>
+      <div className="flex">
+        <Canvas shadows className="canvas" camera={{ position:[10,10,10], fov:30, near: 0.1 }} style={{height: '100vh', width: '50vw'}}>
+          <ambientLight intensity={2}/>
+          <pointLight position={[10, 5, 5]} />
+          <Cube />
+        </Canvas>
+        <header className="header">
+          <div>
+            <h1>dylan windebank</h1>
+            <p>web developer that</p>
+          </div>
+        </header>
+      </div>
     </div>
   );
 }
