@@ -1,36 +1,26 @@
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useFrame } from "@react-three/fiber";
+import { Sphere, MeshDistortMaterial } from "@react-three/drei";
 
 export default function Cube() {
-  const [ rotX, setRotX ] = useState(0.02);
-  const [ rotY, setRotY ] = useState(0.02);
-  const meshRef = useRef();
-  useFrame(() => {
-    if(!meshRef.current){
-      return;
+  const [ distort, setDistort ] = useState(0.2);
+
+  
+  function pointerMove(){
+    if(distort+0.2<1){
+      setDistort(distort+0.1)
     }
-
-    meshRef.current.rotation.x += rotX;
-    meshRef.current.rotation.y += rotY;
-  });
-
-  function onHover(){
-    setRotX(-0.005);
-    setRotY(-0.005)
   }
 
-  function onNotHover(){
-    setRotX(0.01);
-    setRotY(0.01);
-  }
-  function onScroll(){
-    setRotX(rotX+0.001);
-    setRotY(rotY+0.001);
-  }
   return (
-    <mesh ref={meshRef} scale={[3,3,3]} onPointerOver={onHover} onPointerOut={onNotHover} onWheel={onScroll}>
-      <boxGeometry attach="geometry" />
-      <meshLambertMaterial attach="material" color="blue" />
-    </mesh>
+    <Sphere visible args={[1, 199, 200]} scale={2} onWheel={pointerMove}>
+      <MeshDistortMaterial 
+        color="#7017fc"
+        attach="material"
+        distort={distort}
+        speed={1}
+        roughness={1}
+      />
+    </Sphere>
   );
 }
