@@ -8,14 +8,14 @@ $neonpurple: #7017fc;
 h1 {
   font-family: 'Righteous', cursive;
   color: $white;
-  font-size: 70px;
-  margin: 20px 0px 20px 0px ;
+  font-size: 3vw;
+  margin: 0 0 4vh 0 ;
 }
 p {
   font-family: 'Righteous', cursive;
   color: $white;
   display: inline;
-  font-size: 25px;
+  font-size: 1.15vw;
   text-align: left;
   margin: 0px;
 }
@@ -24,11 +24,15 @@ p {
 }
 .App{
   background-color: $navyPurple;
+  background-size: cover;
   height: 300vh;
 }
 .hero{
   height: 100vh;
   background-image: url('../../assets/dylanpageHero.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -38,13 +42,21 @@ p {
   align-items: left;
   justify-content: center;
   font-size: 12px;
-  padding: 28vh 0vh 0vh 40vh;
+  padding: 5% 0vh 0vh 40vh;
+  margin-bottom: 8vh;
 }
 .nav{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 165px;
+  width: 100%;
+  z-index: 999;
+  transition: margin-top 0.6s;
+}
+.nav-fixed{
+  margin-top: -3.8vh;
+  position: fixed;
+  top: 0;
 }
 .navText{
   margin-right: 30px;
@@ -53,8 +65,8 @@ p {
 .wrapper{
   display: flex;
   box-sizing: content-box;
-  height: 30px;
-  width:475px;
+  height: 4vh;
+  width: 25vw;
   padding: 20px 30px;
   border-radius: 8px;
   box-shadow: 0 0px 25px $lightNP;
