@@ -1,5 +1,6 @@
-import { React, useState, Suspense } from "react";
+import { React } from "react";
 import Intro from "./pages/introPage"
+import Skills from "./pages/skillsPage"
 import "./styles/css/sass.css";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <Intro />
+      <Skills />
     </div>
   );
 }

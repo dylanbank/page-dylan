@@ -12,7 +12,7 @@ export default function Navbar(){
     const checkSticky = () => {
         console.log("Scroll Y: ", window.scrollY)
         console.log("Orig: ", originalOffsetTop.current)
-        if (navbarRef.current && window.scrollY>(originalOffsetTop.current-(window.innerHeight/30))) {
+        if (navbarRef.current && window.scrollY>(originalOffsetTop.current-(window.innerHeight/140))) {
             setSticky(true);
         } else {
             setSticky(false);
@@ -42,10 +42,10 @@ export default function Navbar(){
                 <Blob speed="0.7" />
                 </Suspense>
             </Canvas>
-            <div className="navText"><p className="">about me</p></div>
-            <div className="navText"><p>languages</p></div>
-            <div className="navText"><p>hobbies</p></div>
-            <div className="navText"><p>contact me</p></div>
+            <div className="navText"><h3>about me</h3></div>
+            <div className="navText"><h3>skills</h3></div>
+            <div className="navText"><h3>hobbies</h3></div>
+            <div className="navText"><h3>contact me</h3></div>
             <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{height:"20vh", width: "20vw"}}>
                 
                 <ambientLight intensity={2}/>

@@ -11,6 +11,22 @@ h1 {
   font-size: 3vw;
   margin: 0 0 4vh 0 ;
 }
+h2{
+  font-family: 'Righteous', cursive;
+  color: $white;
+  display: inline;
+  font-size: 2vw;
+  text-align: left;
+  margin: 0px;
+}
+h3{
+  font-family: 'Righteous', cursive;
+  color: $white;
+  display: inline;
+  font-size: 1.15vw;
+  text-align: left;
+  margin: 0px;
+}
 p {
   font-family: 'Righteous', cursive;
   color: $white;
@@ -37,6 +53,10 @@ p {
   flex-direction: column;
   justify-content: flex-end;
 }
+.skills{
+  height: 100vh;
+  padding:0 15vw 0 15vw;
+}
 .header {
   display: flex;
   align-items: left;
@@ -51,10 +71,11 @@ p {
   justify-content: center;
   width: 100%;
   z-index: 999;
-  transition: margin-top 0.6s;
+  transition: top 1s;
+  background: rgba(9,3,37,.5);
+  backdrop-filter: blur(10px);
 }
 .nav-fixed{
-  margin-top: -3.8vh;
   position: fixed;
   top: 0;
 }
@@ -78,6 +99,12 @@ p {
 .words {
   text-align: left;
   overflow: hidden;
+}
+.skillRow{
+  margin-top: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 span{
   display: block;

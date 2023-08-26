@@ -9,13 +9,13 @@ export default function Intro(){
             <div>
                 <h1>hello! <br/> my name is <br/>dylan windebank,</h1>
                 <div className="wrapper">
-                <p>and i'm a web developer that </p>
+                <h3>and i'm a web developer that </h3>
                 <div className="words">
-                    <span><p className="p-front"> competes</p></span>
-                    <span><p className="p-front"> leads </p></span>
-                    <span><p className="p-front"> strives </p></span>
-                    <span><p className="p-front"> codes, dur </p></span>
-                    <span><p className="p-front"> competes </p></span>
+                    <span><h3 className="p-front"> competes</h3></span>
+                    <span><h3 className="p-front"> leads </h3></span>
+                    <span><h3 className="p-front"> strives </h3></span>
+                    <span><h3 className="p-front"> codes, dur </h3></span>
+                    <span><h3 className="p-front"> competes </h3></span>
                 </div>
                 </div>
             </div>
