@@ -12,7 +12,7 @@ export default function Navbar(){
     const checkSticky = () => {
         console.log("Scroll Y: ", window.scrollY)
         console.log("Orig: ", originalOffsetTop.current)
-        if (navbarRef.current && window.scrollY>(originalOffsetTop.current-(window.innerHeight/40))) {
+        if (navbarRef.current && window.scrollY>(originalOffsetTop.current-(window.innerHeight/30))) {
             setSticky(true);
         } else {
             setSticky(false);
