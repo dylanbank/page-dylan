@@ -35,7 +35,7 @@ export default function Navbar(){
         { isSticky ? <div style={{height:"20vh", width: "100%"}}></div>: ""}
         <div className={`nav ${isSticky ? 'nav-fixed' : ''}`} ref={navbarRef}>
             <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{height:"20vh", width: "20vw"}}>
-                
+
                 <ambientLight intensity={2}/>
                 <directionalLight position={[10, 5, 5]} intensity={1} />
                 <Suspense fallback={null}>
