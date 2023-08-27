@@ -57,13 +57,23 @@ p {
   height: 100vh;
   padding:0 15vw 0 15vw;
 }
+.heroPic{
+  height: 35vh;
+  width: 35vh;
+  border-radius: 35vh;
+  background-image: url('../../assets/coloradoMe.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-right: 4vw;
+  box-shadow: 0 0px 90px $lightNP;
+}
 .header {
   display: flex;
-  align-items: left;
+  align-items: center;
   justify-content: center;
   font-size: 12px;
-  padding: 5% 0vh 0vh 40vh;
-  margin-bottom: 8vh;
+  margin-bottom: 18vh;
 }
 .nav{
   display: flex;
@@ -72,7 +82,7 @@ p {
   width: 100%;
   z-index: 999;
   transition: top 1s;
-  background: rgba(9,3,37,.9);
+  background: rgba(42,36,70,.1);
   backdrop-filter: blur(10px);
 }
 .nav-fixed{
@@ -90,7 +100,7 @@ p {
   width: 25vw;
   padding: 20px 30px;
   border-radius: 8px;
-  box-shadow: 0 0px 15px $lightNP;
+  box-shadow: 0 0px 40px $lightNP;
   background: rgba(9,3,37,.1);
   backdrop-filter: blur(5px);
 }

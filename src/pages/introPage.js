@@ -5,7 +5,9 @@ export default function Intro(){
     return(
         
         <div className="hero">
+            
             <div className="header">
+                <div className="heroPic" />
             <div>
                 <h1>hello! <br/> my name is <br/>dylan windebank,</h1>
                 <div className="wrapper">
