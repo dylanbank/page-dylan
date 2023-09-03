@@ -7,11 +7,12 @@ export default function Skills(){
                 <h2>languages</h2>
             </div>
             <div className="skillRow">
+                <p>testing</p>
                 <h2>frameworks</h2>
 
             </div>
             <div className="skillRow" style={{marginBottom: "25vh"}}>
-                <h2>balls</h2>
+                <h2>other skills</h2>
             </div>
         </div>
     );

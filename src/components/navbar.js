@@ -10,8 +10,6 @@ export default function Navbar(){
     const originalOffsetTop = useRef(0);
 
     const checkSticky = () => {
-        console.log("Scroll Y: ", window.scrollY)
-        console.log("Orig: ", originalOffsetTop.current)
         if (navbarRef.current && window.scrollY>(originalOffsetTop.current-(window.innerHeight/140))) {
             setSticky(true);
         } else {
@@ -24,7 +22,6 @@ export default function Navbar(){
             originalOffsetTop.current = navbarRef.current.offsetTop;
         }
         window.addEventListener('scroll', checkSticky);
-        
         return () => {
             window.removeEventListener('scroll', checkSticky);
         };
