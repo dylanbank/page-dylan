@@ -135,7 +135,7 @@ p {
   width: 25vw;
   padding: 20px 30px;
   border-radius: 8px;
-  box-shadow: 0 0px 40px $lightNP;
+  border: 2px solid $neonpurple;
   background: rgba(9,3,37,.1);
   backdrop-filter: blur(5px);
 }
