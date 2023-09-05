@@ -27,6 +27,9 @@ h3{
   font-size: 1.15vw;
   text-align: left;
   margin: 0px;
+  position: relative;
+  z-index:900;
+ 
 }
 p {
   font-family: 'Righteous', cursive;
@@ -46,7 +49,7 @@ p {
 }
 .hero{
   height: 100vh;
-  background-image: url('../../assets/dylanpageHero.png');
+  background-image: url('../../assets/dylanpageHero(10).png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -98,15 +101,16 @@ p {
   background: rgba(0,0,0,0);
   position: fixed;
   top: 0;
-  padding: 0px;
+  padding-top: 50px;
 }
 .nav-not-top{
-  background: rgba(112,23,252,1);
+  background: $navyPurple;
+  outline: 2px solid $neonpurple;
 }
 .nav-text-con{
   padding: 10px 20px 10px;
   border-radius: 8px;
-  transition: background 0.3s;
+  transition: background, outline 0.2s;
 
 }
 .navText{
@@ -116,6 +120,7 @@ p {
   flex-direction: column;
   align-items: center;
 }
+
 .selected{
   opacity: 1;
   transition: opacity 0.5s;

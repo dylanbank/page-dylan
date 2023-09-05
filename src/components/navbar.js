@@ -50,7 +50,7 @@ export default function Navbar(){
         <div className="nav">
             <div className="navText" onClick={()=>selectCurrent(1)}>
                 <div className={current.about ? "selected" : "hide"}>
-                    <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{height:"70px", width: "70px"}}>
+                    <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{position:"absolute",height:"70px", width: "70px"}}>
                         <ambientLight intensity={2}/>
                         <directionalLight position={[10, 5, 5]} intensity={1} />
                         <Suspense fallback={null}>
@@ -64,7 +64,7 @@ export default function Navbar(){
             </div>
             <div className="navText" onClick={()=>selectCurrent(2)}>
                 <div className={current.skills ? "selected" : "hide"}>
-                    <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{height:"70px", width: "70px"}}>
+                    <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{position:"absolute",height:"70px", width: "70px"}}>
                         <ambientLight intensity={2}/>
                         <directionalLight position={[10, 5, 5]} intensity={1} />
                         <Suspense fallback={null}>
@@ -78,7 +78,7 @@ export default function Navbar(){
             </div>
             <div className="navText" onClick={()=>selectCurrent(3)}>
                 <div className={current.hobbies ? "selected" : "hide"}>
-                    <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{height:"70px", width: "70px"}}>
+                    <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{position:"absolute",height:"70px", width: "70px"}}>
                         <ambientLight intensity={2}/>
                         <directionalLight position={[10, 5, 5]} intensity={1} />
                         <Suspense fallback={null}>
@@ -92,7 +92,7 @@ export default function Navbar(){
             </div>
             <div className="navText" onClick={()=>selectCurrent(4)}>
                 <div className={current.contact ? "selected" : "hide"}>
-                    <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{height:"70px", width: "70px"}}>
+                    <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{position:"absolute",height:"70px", width: "70px"}}>
                         <ambientLight intensity={2}/>
                         <directionalLight position={[10, 5, 5]} intensity={1} />
                         <Suspense fallback={null}>
