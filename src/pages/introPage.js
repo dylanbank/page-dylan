@@ -5,7 +5,7 @@ export default function Intro(){
     return(
         
         <div className="hero">
-            
+            <Navbar />
             <div className="header">
                 <div className="heroPic" />
             <div>
@@ -22,7 +22,6 @@ export default function Intro(){
                 </div>
             </div>
             </div>
-          <Navbar />
       </div>
     );
 }
