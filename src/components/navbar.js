@@ -1,6 +1,5 @@
-import { Suspense, useState, useEffect, React } from "react";
-import Blob from "./blob";
-import { Canvas } from "@react-three/fiber";
+import { useState, useEffect, React } from "react";
+
 
 export default function Navbar(){
 
@@ -49,58 +48,22 @@ export default function Navbar(){
         <div>
         <div className="nav">
             <div className="navText" onClick={()=>selectCurrent(1)}>
-                <div className={current.about ? "selected" : "hide"}>
-                    <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{position:"absolute",height:"70px", width: "70px"}}>
-                        <ambientLight intensity={2}/>
-                        <directionalLight position={[10, 5, 5]} intensity={1} />
-                        <Suspense fallback={null}>
-                            <Blob speed="-0.7"/>
-                        </Suspense>
-                    </Canvas> 
-                </div>
-                <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} `}>
+                <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.about ? "nav-selected" : ""}`}>
                     <h3>ABOUT ME</h3>
                 </div>
             </div>
             <div className="navText" onClick={()=>selectCurrent(2)}>
-                <div className={current.skills ? "selected" : "hide"}>
-                    <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{position:"absolute",height:"70px", width: "70px"}}>
-                        <ambientLight intensity={2}/>
-                        <directionalLight position={[10, 5, 5]} intensity={1} />
-                        <Suspense fallback={null}>
-                            <Blob speed="-0.7"/>
-                        </Suspense>
-                    </Canvas> 
-                </div>
-                <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} `}>
+                <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.skills ? "nav-selected" : ""}`}>
                     <h3>SKILLS</h3>
                 </div>
             </div>
             <div className="navText" onClick={()=>selectCurrent(3)}>
-                <div className={current.hobbies ? "selected" : "hide"}>
-                    <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{position:"absolute",height:"70px", width: "70px"}}>
-                        <ambientLight intensity={2}/>
-                        <directionalLight position={[10, 5, 5]} intensity={1} />
-                        <Suspense fallback={null}>
-                            <Blob speed="-0.7"/>
-                        </Suspense>
-                    </Canvas> 
-                </div>
-                <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} `}>
+                <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.hobbies ? "nav-selected" : ""}`}>
                     <h3>HOBBIES</h3>
                 </div>
             </div>
             <div className="navText" onClick={()=>selectCurrent(4)}>
-                <div className={current.contact ? "selected" : "hide"}>
-                    <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{position:"absolute",height:"70px", width: "70px"}}>
-                        <ambientLight intensity={2}/>
-                        <directionalLight position={[10, 5, 5]} intensity={1} />
-                        <Suspense fallback={null}>
-                            <Blob speed="-0.7"/>
-                        </Suspense>
-                    </Canvas> 
-                </div>
-                <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} `}>
+                <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.contact ? "nav-selected" : ""}`}>
                     <h3>CONTACT ME</h3>
                 </div>
             </div>

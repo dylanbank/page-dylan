@@ -46,12 +46,13 @@ p {
   background-color: $navyPurple;
   background-size: cover;
   height: 300vh;
+  
 }
 .hero{
   height: 100vh;
-  background-image: url('../../assets/dylanpageHero(10).png');
+  background-image: url('../../assets/dylanpageHero.png');
   background-size: cover;
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -60,7 +61,6 @@ p {
 .skills{
   box-sizing: border-box;
   height: 100vh;
-  padding:0 15vw 0 15vw;
 }
 .about{
   box-sizing: border-box;
@@ -106,12 +106,16 @@ p {
 .nav-not-top{
   background: $navyPurple;
   outline: 2px solid $neonpurple;
+  box-shadow: 0 0 35px black;
 }
 .nav-text-con{
   padding: 10px 20px 10px;
   border-radius: 8px;
-  transition: background, outline 0.2s;
-
+  transition: outline, box-shadow 0.2s;
+  transition: background 0.6s;
+}
+.nav-selected{
+  background: $neonpurple;
 }
 .navText{
   margin-right: 30px;
@@ -119,20 +123,14 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 
-.selected{
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-.hide{
-  opacity: 0;
-}
 .wrapper{
   display: flex;
   box-sizing: content-box;
   height: 3.3vh;
-  width: 25vw;
+  width: 24vw;
   padding: 20px 30px;
   border-radius: 8px;
   border: 2px solid $neonpurple;
