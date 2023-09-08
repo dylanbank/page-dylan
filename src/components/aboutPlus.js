@@ -1,10 +1,10 @@
 import { Capsule } from "@react-three/drei";
 
-export default function Plus(){
+export default function Plus1({...props}){
     return(
-        <mesh>
-            <Capsule args={[1,2,20]}>
-                <meshLambertMaterial attach="material" color={"#000000"} roughness={0.6} />
+        <mesh {...props}>
+            <Capsule args={[0.5,3]} >
+                <meshLambertMaterial attach="material" color={"#7017fc"} roughness={0.6} />
             </Capsule>
         </mesh>
     );
