@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Intro />
       <About />
-      {<Skills />
+      <Skills />
     </div>
   );
 }
