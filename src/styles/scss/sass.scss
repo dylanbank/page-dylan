@@ -14,7 +14,6 @@ h1 {
 h2{
   font-family: 'Righteous', cursive;
   color: $white;
-  display: inline;
   font-size: 2.3vw;
   text-align: left;
   margin: 0px;
@@ -72,14 +71,24 @@ p {
 .aboutCon{
   background: $lightNP;
   border: 3px solid $neonpurple;
-  border-radius: 30px;
+  border-radius: 8px;
   padding: 8vh;
 
+}
+.about-image {
+  background-image: url("../../assets/coloradoMe2.jpg");
+  height: 100%;
+  width: 40vw;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-left: 4vw;
+  border-radius: 8px;
 }
 .heroPic{
   height: 35vh;
   width: 35vh;
-  border-radius: 35vh;
+  border-radius: 8px;
   background-image: url('../../assets/coloradoMe.jpg');
   background-size: cover;
   background-position: center center;
@@ -154,7 +163,7 @@ p {
 }
 span{
   display: block;
-  padding-left: 10px;
+
   height: 100%;
   color: $lightNP;
   animation: spin_words 7s infinite;

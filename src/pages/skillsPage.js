@@ -11,6 +11,8 @@ import REST from "../assets/restLogo.png";
 import AWS from "../assets/awsLogo.png";
 import REACT from "../assets/reactLogo.png";
 import NODE from "../assets/nodeLogo.png";
+import THREE from "../assets/threeLogo.png";
+import NEXT from "../assets/nextLogo.png";
 import SkillSheet from "../components/skillSheet"
 import SkillText from "../components/skillText";
 
@@ -50,18 +52,18 @@ export default function Skills(){
                 <group>
                     <Suspense fallback={null}>
                         <SkillText />
-                        <SkillSheet position={[-4.5, 2, 0]} image={JS} scale={0.7} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[-1.5, 2, 0]} image={PY} scale={0.7} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[1.5, 2, 0]} image={CPP} scale={0.7} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[4.5, 2, 0]} image={SQL} scale={0.7} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[-5.5, 0, 0]} image={HTML} scale={0.7} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[-2.5, 0, 0]} image={CSS} scale={0.7} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[2.5, 0, 0]} image={REST} scale={0.7} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[5.5, 0, 0]} image={AWS} scale={0.7} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[-4.5, -2, 0]} image={REACT} scale={0.7} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[-1.5, -2, 0]} image={NODE} scale={0.7} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[1.5, -2, 0]} image={CSS} scale={0.7} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[4.5, -2, 0]} image={CSS} scale={0.7} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[-5.5, 2, 0]} tooltipText={"javascript"} image={JS} scale={0.7} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[-2.5, 2, 0]} tooltipText={"python"} image={PY} scale={0.7} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[2.5, 2, 0]} tooltipText={"c++"} image={CPP} scale={0.7} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[5.5, 2, 0]} tooltipText={"sql"} image={SQL} scale={0.7} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[-6, 0, 0]} tooltipText={"html"} image={HTML} scale={0.7} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[-3, 0, 0]} tooltipText={"css"} image={CSS} scale={0.7} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[3, 0, 0]} tooltipText={"rest api"} image={REST} scale={0.7} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[6, 0, 0]} tooltipText={"aws"} image={AWS} scale={0.7} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[-5.5, -2, 0]} tooltipText={"react.js"} image={REACT} scale={0.7} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[-2.5, -2, 0]} tooltipText={"node.js"} image={NODE} scale={0.7} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[2.5, -2, 0]} tooltipText={"three.js"} image={THREE} scale={0.7} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[5.5, -2, 0]} tooltipText={"next.js"} image={NEXT} scale={0.7} mousePosition={globalMousePosition}/>
                     </Suspense>
                 </group>
             <Rig />

@@ -13,11 +13,11 @@ export default function Intro(){
                 <div className="wrapper">
                 <h3>and i'm a web developer that </h3>
                 <div className="words">
-                    <span><h3 className="p-front"> competes.</h3></span>
-                    <span><h3 className="p-front"> leads. </h3></span>
-                    <span><h3 className="p-front"> strives. </h3></span>
-                    <span><h3 className="p-front"> codes, dur. </h3></span>
-                    <span><h3 className="p-front"> competes. </h3></span>
+                    <span><h3 className="p-front"> &nbsp;competes.</h3></span>
+                    <span><h3 className="p-front"> &nbsp;leads. </h3></span>
+                    <span><h3 className="p-front"> &nbsp;strives. </h3></span>
+                    <span><h3 className="p-front"> &nbsp;needs a job. </h3></span>
+                    <span><h3 className="p-front"> &nbsp;competes. </h3></span>
                 </div>
                 </div>
             </div>
