@@ -53,16 +53,16 @@ export default function Skills(){
                     <Suspense fallback={null}>
                         <SkillText />
                         <SkillSheet position={[-4, 1.7, 0]} tooltipText={"javascript"} image={JS} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[-1.5, 2, 0]} tooltipText={"python"} image={PY} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[1.5, 2, 0]} tooltipText={"c++"} image={CPP} scale={0.5} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[-2, 2, 0]} tooltipText={"python"} image={PY} scale={0.5} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[2, 2, 0]} tooltipText={"c++"} image={CPP} scale={0.5} mousePosition={globalMousePosition}/>
                         <SkillSheet position={[4, 1.7, 0]} tooltipText={"sql"} image={SQL} scale={0.5} mousePosition={globalMousePosition}/>
                         <SkillSheet position={[-4.5, 0, 0]} tooltipText={"html"} image={HTML} scale={0.5} mousePosition={globalMousePosition}/>
                         <SkillSheet position={[-2.5, 0, 0]} tooltipText={"css"} image={CSS} scale={0.5} mousePosition={globalMousePosition}/>
                         <SkillSheet position={[2.5, 0, 0]} tooltipText={"rest api"} image={REST} scale={0.5} mousePosition={globalMousePosition}/>
                         <SkillSheet position={[4.5, 0, 0]} tooltipText={"aws"} image={AWS} scale={0.5} mousePosition={globalMousePosition}/>
                         <SkillSheet position={[-4, -1.7, 0]} tooltipText={"react.js"} image={REACT} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[-1.5, -2, 0]} tooltipText={"node.js"} image={NODE} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[1.5, -2, 0]} tooltipText={"three.js"} image={THREE} scale={0.5} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[-2, -2, 0]} tooltipText={"node.js"} image={NODE} scale={0.5} mousePosition={globalMousePosition}/>
+                        <SkillSheet position={[2, -2, 0]} tooltipText={"three.js"} image={THREE} scale={0.5} mousePosition={globalMousePosition}/>
                         <SkillSheet position={[4, -1.7, 0]} tooltipText={"next.js"} image={NEXT} scale={0.5} mousePosition={globalMousePosition}/>
                     </Suspense>
                 </group>
