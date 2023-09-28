@@ -61,6 +61,33 @@ p {
   box-sizing: border-box;
   background-image: url('../../assets/dylanpageHero.png');
   height: 100vh;
+  padding: 20vh 15vw 20vh 15vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.skillPicGroup{
+  margin-top: 2vh;
+}
+.skillCol{
+  width: 15vw;
+  flex-direction:column;
+  justify-content: space-between;
+  border-right: 1px solid $neonpurple;
+}
+.skillPic{
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width:100%;
+}
+.skillsCon{
+  background: $navyPurple;
+  border: 3px solid $neonpurple;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 17vw;
+  height: 25vh
 }
 .about{
   box-sizing: border-box;
@@ -68,8 +95,8 @@ p {
   padding:20vh 15vw 20vh 15vw;
   display: flex;
 }
-.aboutCon{
-  background: $lightNP;
+.infoCon{
+  background: $navyPurple;
   border: 3px solid $neonpurple;
   border-radius: 8px;
   padding: 8vh;

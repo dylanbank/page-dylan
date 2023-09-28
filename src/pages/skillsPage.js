@@ -46,28 +46,68 @@ export default function Skills(){
     }
 
     return(
-        <div className="skills">
-            <Canvas> 
-                <pointLight color="#ffffff" position={[0, 0, 30]} intensity={0.5}/>
-                <group>
-                    <Suspense fallback={null}>
-                        <SkillText />
-                        <SkillSheet position={[-4, 1.7, 0]} tooltipText={"javascript"} image={JS} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[-2, 2, 0]} tooltipText={"python"} image={PY} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[2, 2, 0]} tooltipText={"c++"} image={CPP} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[4, 1.7, 0]} tooltipText={"sql"} image={SQL} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[-4.5, 0, 0]} tooltipText={"html"} image={HTML} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[-2.5, 0, 0]} tooltipText={"css"} image={CSS} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[2.5, 0, 0]} tooltipText={"rest api"} image={REST} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[4.5, 0, 0]} tooltipText={"aws"} image={AWS} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[-4, -1.7, 0]} tooltipText={"react.js"} image={REACT} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[-2, -2, 0]} tooltipText={"node.js"} image={NODE} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[2, -2, 0]} tooltipText={"three.js"} image={THREE} scale={0.5} mousePosition={globalMousePosition}/>
-                        <SkillSheet position={[4, -1.7, 0]} tooltipText={"next.js"} image={NEXT} scale={0.5} mousePosition={globalMousePosition}/>
-                    </Suspense>
-                </group>
-            <Rig />
-            </Canvas> 
+        <div className="skills flex">
+            
+            <div className='skillsCon'>
+                <h2>LANGUAGES</h2>
+                <div className='flex skillPicGroup'>
+                    <div className='flex skillCol'>
+                        <div> <p>javascript</p> </div>
+                        <div><p>python</p></div>
+                        <div><p>c++</p></div>
+                        <div><p>sql</p></div>
+                    </div>
+                    <Canvas> 
+                        <pointLight color="#ffffff" position={[0, 0, 30]} intensity={0.2}/>
+                        <group>
+                            <Suspense fallback={null}>
+                                <SkillSheet position={[0, 0, 0]} tooltipText={"javascript"} image={JS} scale={2} mousePosition={globalMousePosition}/>
+                            </Suspense>
+                        </group>
+                        <Rig />
+                    </Canvas> 
+                </div>
+            </div>
+            <div className='skillsCon'>
+                <h2>SKILLS</h2>
+                <div className='flex skillPicGroup'>
+                    <div className='flex skillCol'>
+                        <div><p>css</p></div>
+                        <div><p>html</p></div>
+                        <div><p>rest api</p></div>
+                        <div><p>aws</p></div> 
+                    </div>
+                    <Canvas> 
+                        <pointLight color="#ffffff" position={[0, 0, 30]} intensity={0.2}/>
+                        <group>
+                            <Suspense fallback={null}>
+                                <SkillSheet position={[0, 0, 0]} tooltipText={"javascript"} image={JS} scale={2} mousePosition={globalMousePosition}/>
+                            </Suspense>
+                        </group>
+                        <Rig />
+                    </Canvas> 
+                </div>
+            </div>
+            <div className='skillsCon'>
+                <h2>FRAMEWORKS</h2>
+                <div className='flex skillPicGroup'>
+                    <div className='flex skillCol'>
+                        <div><p>react.js</p></div>
+                        <div><p>node.js</p></div>
+                        <div><p>three.js</p></div>
+                        <div><p>next.js</p></div>
+                    </div>
+                    <Canvas> 
+                        <pointLight color="#ffffff" position={[0, 0, 30]} intensity={0.2}/>
+                        <group>
+                            <Suspense fallback={null}>
+                                <SkillSheet position={[0, 0, 0]} tooltipText={"javascript"} image={JS} scale={2} mousePosition={globalMousePosition}/>
+                            </Suspense>
+                        </group>
+                        <Rig />
+                    </Canvas> 
+                </div>
+            </div>
         </div>
     );
 }
