@@ -36,10 +36,10 @@ export default function SkillSheet({ image, mousePosition, tooltipText, ...props
       <mesh
         ref={tooltipRef}
       >
-        <Plane args={[1.2,0.5]} position={[props.position[0], props.position[1]-1, -0.25]}>
+        <Plane args={[1.2,0.3]} position={[props.position[0], props.position[1]-0.9, 0]}>
           <meshLambertMaterial color={"#7017fc"} roughness={0.6} distort={0} map={null}/>
         </Plane>
-        <Text fontSize={0.2}position={[props.position[0], props.position[1]-1, -0.24]} color={"#ffffff"}>
+        <Text fontSize={0.3}position={[props.position[0], props.position[1]-0.8, 0.01]} color={"#ffffff"}>
           {tooltipText}
         </Text>
       </mesh>
