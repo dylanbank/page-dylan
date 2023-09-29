@@ -1,35 +1,35 @@
 import { useRef, useState, useEffect } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
-import { Plane, Text, MeshDistortMaterial } from "@react-three/drei";
+import { Sphere, MeshDistortMaterial, Plane} from "@react-three/drei";
 
-export default function SkillSheet({ image, mousePosition, tooltipText, ...props}) {
-  const sheetRef = useRef();
-  const tooltipRef = useRef();
-  const [tooltip, setTooltip] = useState(false);
-  const texture = useLoader(TextureLoader, image);
-  
-  useFrame(({ viewport }) => {
-    const x = (mousePosition.x * viewport.width) / 2.5
-    const y = (mousePosition.y * viewport.height) / 2.5
-    sheetRef.current.lookAt(x/3, y/4, 1)
-  });
-  useEffect(() => {
-    if(tooltipRef && tooltipRef.current){
-      tooltipRef.current.visible = tooltip;
-    }
-  },[tooltip]);
+export default function SkillSheet({ image, ...props}) {
+  const [ texture , setTexture] = useState(null)
 
+  useEffect(()=>{
+    setTexture(useLoader(TextureLoader, image));
+  }, props.image)
   return (
     <>
       <mesh
-        {...props}
-        ref={sheetRef}
+        position={[0,0,2]}
       >
         <Plane args={[2,2]} visible>
-          <MeshDistortMaterial attach="material" map={texture} color={"#ffffff"} roughness={0.6} distort={0}/>
+          <MeshDistortMaterial attach="material" map={texture===null ? null : texture} color={"#ffffff"} roughness={0.6} distort={0}/>
         </Plane>
-        {props.children}
+      </mesh>
+      <mesh
+        {...props}
+      >
+        <Sphere visible args={[1, 100, 200]}>
+          <MeshDistortMaterial 
+            color="#7017fc"
+            attach="material"
+            distort={0.7}
+            speed={1}
+            roughness={1}
+          />
+        </Sphere>
       </mesh>
     </>
   )
