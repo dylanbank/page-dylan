@@ -34,7 +34,7 @@ p {
   font-family: 'Righteous', cursive;
   color: $white;
   display: inline;
-  font-size: 1.15vw;
+  font-size: 1rem;
   text-align: left;
   margin: 0px;
 }
@@ -61,7 +61,7 @@ p {
   box-sizing: border-box;
   background-image: url('../../assets/dylanpageHero.png');
   height: 100vh;
-  padding: 20vh 15vw 20vh 15vw;
+  padding: 20vh 10vw 20vh 10vw;
   justify-content: space-between;
   align-items: center;
 }
@@ -69,10 +69,14 @@ p {
   margin-top: 2vh;
 }
 .skillCol{
-  width: 15vw;
   flex-direction:column;
   justify-content: space-between;
-  border-right: 1px solid $neonpurple;
+  border-left: 1px solid $neonpurple;
+}
+.skill{
+  padding-left: 2vw;
+  transition: padding-left 1s;
+  cursor: pointer;
 }
 .skillPic{
   border-radius: 5px;
@@ -85,9 +89,8 @@ p {
   background: $navyPurple;
   border: 3px solid $neonpurple;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 2vw;
   width: 17vw;
-  height: 25vh
 }
 .about{
   box-sizing: border-box;
