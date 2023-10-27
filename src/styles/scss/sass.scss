@@ -38,13 +38,19 @@ p {
   text-align: left;
   margin: 0px;
 }
+input, label{
+  display: block;
+}
+textarea{
+  width: 100%;
+}
 .p-front{
   color: $neonpurple;
 }
 .App{
   background-color: $navyPurple;
   background-size: cover;
-  height: 300vh;
+  height: 400vh;
   
 }
 .hero{
@@ -61,28 +67,40 @@ p {
   box-sizing: border-box;
   background-image: url('../../assets/dylanpageHero.png');
   height: 100vh;
-  padding: 20vh 10vw 20vh 10vw;
   justify-content: space-between;
   align-items: center;
+  padding: 20vh 10vw 20vh 10vw;
 }
 .skillPicGroup{
   margin-top: 2vh;
+  position: relative;
+  background: $navyPurple;
+  border: 3px solid $neonpurple;
+}
+.skillIconBlob{
+  z-index:1;
 }
 .skillCol{
-  flex-direction:column;
   justify-content: space-between;
-  border-left: 1px solid $neonpurple;
+  flex-wrap: wrap;
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 .skillExtend{
   flex-direction: column;
   align-items: center;
-  width: 17vw;
+  width: 20vw;
 }
 .skill{
-  padding-left: 2vw;
-  transition: padding-left 1s;
+  width: 100%;
+  flex-basis: 50%;
+  transition: border-bottom 1s;
   transition-timing-function: ease-out;
-  cursor: pointer;
+}
+.skillR{
+  text-align: right;
 }
 .skillPic{
   border-radius: 5px;
@@ -92,8 +110,6 @@ p {
   width:100%;
 }
 .skillsCon{
-  background: $navyPurple;
-  border: 3px solid $neonpurple;
   border-radius: 8px;
   padding: 2vw;
   width: 100%;
@@ -102,7 +118,11 @@ p {
   box-sizing: border-box;
   height: 100vh;
   padding:20vh 15vw 20vh 15vw;
-  display: flex;
+}
+.contact{
+  box-sizing: border-box;
+  height: 100vh;
+  padding:20vh 15vw 20vh 15vw;
 }
 .infoCon{
   background: $navyPurple;
@@ -186,6 +206,12 @@ p {
 }
 .flex{
   display: flex;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.justify-center{
+  justify-content: center;
 }
 .words {
   text-align: left;

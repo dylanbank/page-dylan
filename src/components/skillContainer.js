@@ -1,36 +1,42 @@
 import { useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 import SkillText from "./skillText";
 import SkillSheet from "./skillSheet";
 export default function SkillContainer(props){
 
-    const [selected, setSelected] = useState({selectedText:"", selectedImage:null})
-
+    const [selectedText, setSelectedText] = useState("");
+    const [selectedDesc, setSelectedDesc] = useState('')
     return(
         <div className="flex skillExtend">
             <div className='skillsCon'>
                 <h2>{props.title}</h2>
-                <div className='flex skillPicGroup'>
-                    <div className='flex skillCol'>
+                <div className='skillPicGroup'>
+                    <div className='flex skillCol justify-between'>
                         {props.skills.map((item, index) => 
-                            <div className="skill" style={ selected.selectedText === item ? {borderLeft: "5px solid #7017fc", fontWeight: "bold", paddingLeft: "2.5vw"} : {borderLeft: "none"}}><p onClick={()=>{
-                                setSelected({
-                                    selectedText: item,
-                                    selectedImage: props.images[index]
-                            })}}>{item}</p></div>
+                            
+                            <div className={(index+1)%2 ? "skill" : "skill skillR"}>
+                                <p style={ selectedText === item ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ setSelectedText(item)}}>{item}</p>
+                            </div>
                         )}
                     </div>
-                    <p>{selected.selectedImage}</p>
+                    <div className="flex justify-between skillIconBlob">
+                        <Canvas> 
+                            <pointLight color="#ffffff" position={[0, 0, 10]} intensity={0.8}/>
+                            <pointLight color="#ffffff" position={[-10, 0, 0]} intensity={0.8}/>
+                            <pointLight color="#ffffff" position={[0, 0, -10]} intensity={0.8}/>
+                            <pointLight color="#ffffff" position={[10, 0, 10]} intensity={0.8}/>
+                            <group>
+                                <Suspense fallback={null}>
+                                    <SkillSheet />
+                                </Suspense>
+                            </group>
+                            <OrbitControls enableDamping={true} enableZoom={false} maxPolarAngle={Math.PI /2} minPolarAngle={Math.PI/2}/>
+                        </Canvas>
+                    </div>
                 </div>
             </div>
-            <Canvas> 
-                <pointLight color="#ffffff" position={[0, 0, 10]} intensity={0.8}/>
-                <group>
-                    <Suspense fallback={null}>
-                        <SkillSheet image={selected.selectedImage} position={[0, 0, -1]}  scale={2} />
-                    </Suspense>
-                </group>
-            </Canvas>
+            <p>sdsdsdasds</p>
         </div>
     );
 }
