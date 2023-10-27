@@ -10,9 +10,9 @@ export default function Skills(){
     return(
         <div className="skills flex">
             <SkillContainer title={"LANGUAGES"}  skills={['javascript', 'python', 'sql', 'c++']} />
-            <div style={{height: '100px', width: '3px', backgroundColor: '#ffffff', borderRadius:'5px'}} />
+            
             <SkillContainer title={"SKILLS"}  skills={['html', 'css', 'aws', 'rest api']} />
-            <div style={{height: '100px', width: '3px', backgroundColor: '#ffffff', borderRadius:'5px'}} />
+            
             <SkillContainer title={"FRAMEWORKS"}  skills={['react.js', 'node.js', 'three.js', 'next.js']}/>
     
         </div>
