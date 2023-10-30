@@ -38,10 +38,10 @@ p {
   text-align: left;
   margin: 0px;
 }
-input, label{
+label{
   display: block;
   margin-top: 10px;
-  width: 30%;
+  width: 100%;
 }
 textarea{
   width: 100%;
@@ -72,7 +72,7 @@ textarea{
   box-sizing: border-box;
   background-image: url('../../assets/dylanpageHero.png');
   height: 100vh;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 20vh 10vw 20vh 10vw;
 }
@@ -103,9 +103,8 @@ textarea{
   width: 22vw;
 }
 .skill{
-  width: 100%;
-  flex-basis: 50%;
-  transition: border-bottom 1s;
+  margin-right: 20px;
+  transition: border-bottom 0.1s;
   transition-timing-function: ease-out;
 }
 .skillR{
@@ -135,8 +134,9 @@ textarea{
 }
 .infoCon{
   background: $navyPurple;
-  border: 3px solid $neonpurple;
-  border-radius: 8px;
+  //border: 3px solid $neonpurple;
+  width: 50%;
+  border-radius: 5px;
   padding: 8vh;
 
 }
@@ -231,6 +231,15 @@ textarea{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.formField{
+  margin-top: 2vh;
+  width: 50%;
+}
+.formInput{
+  display: block;
+  margin-top: 10px;
+  width: 100%;
 }
 span{
   display: block;
