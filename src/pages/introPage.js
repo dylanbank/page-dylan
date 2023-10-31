@@ -6,7 +6,7 @@ export default function Intro(){
         
         <div className="hero">
             <Navbar />
-            <div className="header">
+            <div className="header flex">
                 <div className="heroPic" />
             <div>
                 <h1>Hello! <br/> My name is <br/>Dylan Windebank,</h1>

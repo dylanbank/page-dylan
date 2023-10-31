@@ -49,18 +49,15 @@ export default function Skills(){
                 </Canvas>
             </div>
             <div style={{width:'50%'}}>
-                <h2>LANGUAGES</h2>
+                <h2>SKILLS</h2>
                 <p className='skill' style={ selectedText === 'JS' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('JS')}}>javascript</p>
                 <p className='skill' style={ selectedText === 'PY' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('PY')}}>python</p>
                 <p className='skill' style={ selectedText === 'SQL' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('SQL')}}>sql</p>
                 <p className='skill' style={ selectedText === 'CPP' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('CPP')}}>c++</p>
-
-                <h2>SKILLS</h2>
                 <p className='skill' style={ selectedText === 'HTML' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('HTML')}}>html</p>
                 <p className='skill' style={ selectedText === 'CSS' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('CSS')}}>css</p>
                 <p className='skill' style={ selectedText === 'AWS' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('AWS')}}>aws</p>
                 <p className='skill' style={ selectedText === 'REST' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('REST')}}>rest api</p>
-                <h2>FRAMEWORKS</h2>
                 <p className='skill' style={ selectedText === 'REACT' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('REACT')}}>react</p>
                 <p className='skill' style={ selectedText === 'NODE' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('NODE')}}>node</p>
                 <p className='skill' style={ selectedText === 'THREE' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('THREE')}}>three</p>
