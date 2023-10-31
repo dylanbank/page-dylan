@@ -5,6 +5,10 @@ $lightNP: #2a2446;
 $white: #ffffff;
 $neonblue: #2735fd;
 $neonpurple: #7017fc;
+html{
+  background-color: $navyPurple;
+  background-size: cover;
+}
 h1 {
   font-family: 'Righteous', cursive;
   color: $white;
@@ -70,11 +74,14 @@ textarea{
 }
 .skills{
   box-sizing: border-box;
-  background-image: url('../../assets/dylanpageHero.png');
   height: 100vh;
   justify-content: center;
   align-items: center;
-  padding: 20vh 10vw 20vh 10vw;
+  position: relative;
+}
+.skillWrapper{
+  background-image: url('../../assets/dylanpageHero.png');
+  padding: 20vw;
 }
 .skillPicGroup{
   margin-top: 2vh;

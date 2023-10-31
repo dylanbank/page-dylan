@@ -16,13 +16,18 @@ import THREE from "../assets/threeLogo.png";
 import NEXT from "../assets/nextLogo.png";
 
 export default function SkillSheet({ ...props}) {
-  const [ selectedTexture , setSelectedTexture] = useState(null)
+  const [ selectedTexture , setSelectedTexture] = useState(null);
+  const [ ratio, setRatio ] = useState(window.innerWidth/1080)
   useEffect(()=> {
     setSelectedTexture(texture[props.selected]);
     console.log(props.selected)
     console.log(selectedTexture)
-  }, [props.selected])
-  const dwa = useLoader(TextureLoader, JS);
+  }, [props.selected]);
+  
+  useEffect(()=> {
+      setRatio(window.innerWidth/1080);
+  }, [window.innerWidth]);
+
   const texture = {
       JS: useLoader(TextureLoader, JS),
       PY: useLoader(TextureLoader, PY),
@@ -37,11 +42,15 @@ export default function SkillSheet({ ...props}) {
       THREE: useLoader(TextureLoader, THREE),
       NEXT: useLoader(TextureLoader, NEXT),
   };
+
+  const isMobile = window.innerWidth < 750;
+
   return (
     <>
       <mesh
-        position={[0,0,2.5]}
-        scale={0.6}
+        position={[-0.4*ratio, 0.4*ratio, isMobile ? -2.5 : -3]}
+        scale={ isMobile ? 0.8*ratio : 0.6}
+        rotation={[0, Math.PI, 0]}
       >
         { selectedTexture && 
           <Plane args={[2,2]} visible>
@@ -50,20 +59,6 @@ export default function SkillSheet({ ...props}) {
         }
       </mesh>
       
-      <mesh
-        position={[0, 0, 0]} 
-        scale={1.7}
-      >
-        <Sphere visible args={[1, 100, 200]}>
-          <MeshDistortMaterial 
-            color="#7017fc"
-            attach="material"
-            distort={0.7}
-            speed={0.7}
-            roughness={1}
-          />
-        </Sphere>
-      </mesh>
     </>
   )
 }
