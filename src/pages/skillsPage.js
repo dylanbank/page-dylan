@@ -62,7 +62,7 @@ export default function Skills(){
                 <div style={{position:'absolute', width:'100%', height:'100%', zIndex: "20", display: 'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
                     <div style={ isMobile ? {marginTop: '200px'} : {}}>
                         <h2>SKILLS</h2>
-                        <div style={{display: 'flex', gap: '2rem', flexWrap: 'wrap'}}>
+                        <div style={{display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap'}}>
                             <p className='skill' style={ selectedText === 'JS' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('JS')}}>javascript</p>
                             <p className='skill' style={ selectedText === 'PY' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('PY')}}>python</p>
                             <p className='skill' style={ selectedText === 'SQL' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('SQL')}}>sql</p>
