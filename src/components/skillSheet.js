@@ -48,7 +48,7 @@ export default function SkillSheet({ ...props}) {
   return (
     <>
       <mesh
-        position={[-0.4*ratio, 0.4*ratio, isMobile ? -2.5 : -3]}
+        position={[-0.4*ratio, isMobile ? 0.4 : 0.6, isMobile ? -2.5 : -3]}
         scale={ isMobile ? 0.8*ratio : 0.6}
         rotation={[0, Math.PI, 0]}
       >
