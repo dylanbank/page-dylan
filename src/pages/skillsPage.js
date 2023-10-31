@@ -10,11 +10,13 @@ export default function Skills(){
 
     const HandleChange = (newSkill) => {
         console.log(newSkill);
-        console.log(cameraControlRef.current.azimuthAngle);
+        
         const angle = cameraControlRef.current.azimuthAngle;
         const remainder = angle%(2*Math.PI);
         const equalize = (2*Math.PI)-remainder;
-        console.log(remainder);
+        console.log(`angle: ${angle}`);
+        console.log(`remainder: ${remainder}`);
+        console.log(`equalize: ${equalize}`);
         if(selectedText==''){
             setSelectedText(newSkill); 
         } else if(selectedText!=newSkill){
@@ -27,8 +29,8 @@ export default function Skills(){
 
     return(
         <div className="skills flex">
-            <div>
-                <Canvas style={{width:'600px', height:'600px'}}> 
+            <div style={{width: '50%'}}>
+                <Canvas style={{width:'38vw', height:'80vh'}}> 
                     <pointLight color="#ffffff" position={[0, 0, 10]} intensity={0.1}/>
                     <pointLight color="#ffffff" position={[0, 0, -10]} intensity={0.1}/>
                     <pointLight color="#ffffff" position={[-10, 0, 0]} intensity={0.1}/>
@@ -43,10 +45,10 @@ export default function Skills(){
                         
                             <SkillSheet selected={selectedText} cameraControlRef/>
                     </group>
-                    <CameraControls minZoom={0} maxZoom={0} ref={cameraControlRef} maxPolarAngle={Math.PI /2} minPolarAngle={Math.PI/2}/>
+                    <CameraControls dollyToCursor={true} minDistance={5} maxDistance={5} ref={cameraControlRef} maxPolarAngle={Math.PI /2} minPolarAngle={Math.PI/2} zoom={false}/>
                 </Canvas>
             </div>
-            <div>
+            <div style={{width:'50%'}}>
                 <h2>LANGUAGES</h2>
                 <p className='skill' style={ selectedText === 'JS' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('JS')}}>javascript</p>
                 <p className='skill' style={ selectedText === 'PY' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('PY')}}>python</p>

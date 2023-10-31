@@ -40,8 +40,8 @@ export default function SkillSheet({ ...props}) {
   return (
     <>
       <mesh
-        position={[0,0,2.3]}
-        scale={0.8}
+        position={[0,0,2.5]}
+        scale={0.6}
       >
         { selectedTexture && 
           <Plane args={[2,2]} visible>
@@ -52,7 +52,7 @@ export default function SkillSheet({ ...props}) {
       
       <mesh
         position={[0, 0, 0]} 
-        scale={1.5}
+        scale={1.7}
       >
         <Sphere visible args={[1, 100, 200]}>
           <MeshDistortMaterial 
