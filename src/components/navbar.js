@@ -1,56 +1,72 @@
-import { Suspense, useState, useEffect, React, useRef } from "react";
-import Blob from "./blob";
-import { Canvas } from "@react-three/fiber";
+import { useState, useEffect, React } from "react";
+
 
 export default function Navbar(){
 
-    const [isSticky, setSticky] = useState(false);
-    
-    const navbarRef = useRef(null);
-    const originalOffsetTop = useRef(0);
+    const [isTop, setIsTop] = useState(true);
+    const [current, setCurrent] = useState({
+        about:false,
+        skills:false,
+        hobbies:false,
+        contact:false
+    });
 
-    const checkSticky = () => {
-        if (navbarRef.current && window.scrollY>(originalOffsetTop.current-(window.innerHeight/140))) {
-            setSticky(true);
+    const checkTop = () => {
+        if (window.scrollY) {
+            setIsTop(false);
         } else {
-            setSticky(false);
+            setCurrent({about:false,skills:false,hobbies:false,contact:false});
+            setIsTop(true);
         }
     };
 
-    useEffect(() => {
-        if (navbarRef.current) {
-            originalOffsetTop.current = navbarRef.current.offsetTop;
+    const selectCurrent = (selection) => {
+        switch(selection){
+            case 1:
+                setCurrent({about:true,skills:false,hobbies:false,contact:false,});
+                break;
+            case 2:
+                setCurrent({about:false,skills:true,hobbies:false,contact:false,});
+                break;
+            case 3:
+                setCurrent({about:false,skills:false,hobbies:true,contact:false,});
+                break;
+            case 4:
+                setCurrent({about:false,skills:false,hobbies:false,contact:true,});
+                break;
         }
-        window.addEventListener('scroll', checkSticky);
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', checkTop);
         return () => {
-            window.removeEventListener('scroll', checkSticky);
+            window.removeEventListener('scroll', checkTop);
         };
     }, []);
 
     return(
         <div>
-        { isSticky ? <div style={{height:"20vh", width: "100%"}}></div>: ""}
-        <div className={`nav ${isSticky ? 'nav-fixed' : ''}`} ref={navbarRef}>
-            <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{height:"20vh", width: "20vw"}}>
-
-                <ambientLight intensity={2}/>
-                <directionalLight position={[10, 5, 5]} intensity={1} />
-                <Suspense fallback={null}>
-                <Blob speed="0.7" />
-                </Suspense>
-            </Canvas>
-            <div className="navText"><h3>about me</h3></div>
-            <div className="navText"><h3>skills</h3></div>
-            <div className="navText"><h3>hobbies</h3></div>
-            <div className="navText"><h3>contact me</h3></div>
-            <Canvas shadows camera={{ position:[5,5,15], fov:30, near: 0.5 }} style={{height:"20vh", width: "20vw"}}>
-                
-                <ambientLight intensity={2}/>
-                <directionalLight position={[10, 5, 5]} intensity={1} />
-                <Suspense fallback={null}>
-                <Blob speed="-0.7"/>
-                </Suspense>
-            </Canvas>
+        <div className="nav">
+            <div className="navText" onClick={()=>selectCurrent(1)}>
+                <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.about ? "nav-selected" : ""}`}>
+                    <h3>ABOUT ME</h3>
+                </div>
+            </div>
+            <div className="navText" onClick={()=>selectCurrent(2)}>
+                <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.skills ? "nav-selected" : ""}`}>
+                    <h3>SKILLS</h3>
+                </div>
+            </div>
+            <div className="navText" onClick={()=>selectCurrent(3)}>
+                <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.hobbies ? "nav-selected" : ""}`}>
+                    <h3>HOBBIES</h3>
+                </div>
+            </div>
+            <div className="navText" onClick={()=>selectCurrent(4)}>
+                <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.contact ? "nav-selected" : ""}`}>
+                    <h3>CONTACT ME</h3>
+                </div>
+            </div>
         </div>
         </div>
     )
