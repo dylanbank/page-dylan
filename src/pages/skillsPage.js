@@ -60,21 +60,26 @@ export default function Skills(){
                     
                 </div>
                 <div style={{position:'absolute', width:'100%', height:'100%', zIndex: "20", display: 'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
-                    <div style={ isMobile ? {marginTop: '200px'} : {}}>
+                    <div style={ isMobile ? {marginTop: '-200px'} : {marginTop: '-300px'}}>
                         <h2>SKILLS</h2>
-                        <div style={{display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap'}}>
-                            <p className='skill' style={ selectedText === 'JS' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('JS')}}>javascript</p>
-                            <p className='skill' style={ selectedText === 'PY' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('PY')}}>python</p>
-                            <p className='skill' style={ selectedText === 'SQL' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('SQL')}}>sql</p>
-                            <p className='skill' style={ selectedText === 'CPP' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('CPP')}}>c++</p>
-                            <p className='skill' style={ selectedText === 'HTML' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('HTML')}}>html</p>
-                            <p className='skill' style={ selectedText === 'CSS' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('CSS')}}>css</p>
-                            <p className='skill' style={ selectedText === 'AWS' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('AWS')}}>aws</p>
-                            <p className='skill' style={ selectedText === 'REST' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('REST')}}>rest api</p>
-                            <p className='skill' style={ selectedText === 'REACT' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('REACT')}}>react</p>
-                            <p className='skill' style={ selectedText === 'NODE' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('NODE')}}>node</p>
-                            <p className='skill' style={ selectedText === 'THREE' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('THREE')}}>three</p>
-                            <p className='skill' style={ selectedText === 'NEXT' ? {borderBottom: "5px solid #7017fc", fontWeight: "bold", cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('NEXT')}}>next</p>
+                        <div style={isMobile ? {display: 'flex', flexDirection:'column'}:{display: 'flex'}}>
+                            <div style={isMobile ? {display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap', width:'100%'} : {display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap', width:'50%'}}>
+                                <p className='skill'> &#123; </p>
+                                <p className='skill' style={ selectedText === 'JS' ? {background: '#7017fc',  cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('JS')}}>javascript</p>
+                                <p className='skill' style={ selectedText === 'PY' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('PY')}}>python</p>
+                                <p className='skill' style={ selectedText === 'SQL' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('SQL')}}>sql</p>
+                                <p className='skill' style={ selectedText === 'CPP' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('CPP')}}>c++</p>
+                                <p className='skill' style={ selectedText === 'HTML' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('HTML')}}>html</p>
+                                <p className='skill' style={ selectedText === 'CSS' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('CSS')}}>css</p>
+                                <p className='skill' style={ selectedText === 'AWS' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('AWS')}}>aws</p>
+                                <p className='skill' style={ selectedText === 'REST' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('REST')}}>rest api</p>
+                                <p className='skill' style={ selectedText === 'REACT' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('REACT')}}>react</p>
+                                <p className='skill' style={ selectedText === 'NODE' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('NODE')}}>node</p>
+                                <p className='skill' style={ selectedText === 'THREE' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('THREE')}}>three</p>
+                                <p className='skill' style={ selectedText === 'NEXT' ? {background: '#7017fc',  cursor: 'pointer'} : {cursor: 'pointer'}}onClick={()=>{ HandleChange('NEXT')}}>next</p>
+                                <p className='skill'> &#125; </p>
+                            </div>
+                            <div style={isMobile ? {width: '100%'} : {width: '50%'}} />
                         </div>
                     </div>
                 </div>

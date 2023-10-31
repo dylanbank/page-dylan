@@ -112,6 +112,9 @@ textarea{
 .skill{
   transition: border-bottom 0.1s;
   transition-timing-function: ease-out;
+  padding: 5px;
+  border-radius: 7px;
+  //border: 3px solid $neonpurple;
 }
 .skillR{
   text-align: right;
@@ -131,7 +134,7 @@ textarea{
 .about{
   box-sizing: border-box;
   height: 100vh;
-  padding:20vh 15vw 20vh 15vw;
+  padding:20vh 15vw 0vh 15vw;
   gap: 10vw;
 }
 .contact{
