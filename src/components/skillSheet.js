@@ -5,7 +5,7 @@ import { Sphere, MeshDistortMaterial, Plane} from "@react-three/drei";
 import JS from "../assets/jsLogo.png";
 import PY from "../assets/pythonLogo.png"
 import CPP from "../assets/cppLogo.png"
-import SQL from "../assets/mysqlLogo.png"
+import SQL from "../assets/sqlLogo.png"
 import CSS from "../assets/cssLogo.png";
 import HTML from "../assets/htmlLogo.png";
 import REST from "../assets/restLogo.png";
@@ -13,7 +13,7 @@ import AWS from "../assets/awsLogo.png";
 import REACT from "../assets/reactLogo.png";
 import NODE from "../assets/nodeLogo.png";
 import THREE from "../assets/threeLogo.png";
-import NEXT from "../assets/nextLogo.png";
+import GIT from '../assets/githubLogo.png';
 
 export default function SkillSheet({ ...props}) {
   const [ selectedTexture , setSelectedTexture] = useState(null);
@@ -40,7 +40,7 @@ export default function SkillSheet({ ...props}) {
       REACT: useLoader(TextureLoader, REACT),
       NODE: useLoader(TextureLoader, NODE),
       THREE: useLoader(TextureLoader, THREE),
-      NEXT: useLoader(TextureLoader, NEXT),
+      GIT: useLoader(TextureLoader, GIT),
   };
 
   const isMobile = window.innerWidth < 750;
@@ -48,13 +48,13 @@ export default function SkillSheet({ ...props}) {
   return (
     <>
       <mesh
-        position={[-0.4*ratio, isMobile ? -0.4 : -0.6, isMobile ? -2.5 : -3]}
+        position={[-0.5*ratio, 0, isMobile ? -2.5 : -3]}
         scale={ isMobile ? 0.8*ratio : 0.6}
-        rotation={[0, Math.PI, 0]}
+        rotation={[Math.PI/8, Math.PI, -Math.PI/16]}
       >
         { selectedTexture && 
           <Plane args={[2,2]} visible>
-            <MeshDistortMaterial attach="material" map={selectedTexture} color={"#ffffff"} roughness={0.6} distort={0}/>
+            <MeshDistortMaterial attach="material" map={selectedTexture} roughness={0.6} distort={0} transparent={true} opacity={1}/>
           </Plane>
         }
       </mesh>

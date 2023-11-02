@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser'
 export default function Contact(){
     const [ info, setInfo ] = useState({email: null, name: null, subject: null, content: null});
+    const isMobile = window.innerWidth < 1500;
     const form = useRef();
 
     const HandleSubmit = (e) => {
@@ -20,7 +21,7 @@ export default function Contact(){
         <div className="contact">
             <h2>CONTACT ME</h2>
             <form onSubmit={HandleSubmit} ref={form}>
-                <div className="flex" style={{width:'100%', gap: '10%'}}>
+                <div className="flex" style={{width:'100%', gap: '5%', justifyContent: 'flex-start'}}>
                     <div className="formField">
                         <label><h3>your email</h3></label>
                         <input required name='userEmail' className='formInput' placeholder="" value={info.email} onChange={(e) => setInfo({...info, email: e.target.value})}/>
@@ -33,13 +34,19 @@ export default function Contact(){
                         <label><h3>subject</h3></label>
                         <input required name='userSubject'className='formInput' placeholder="" value={info.subject} onChange={(e) => setInfo({...info, subject: e.target.value})}/>
                     </div>
+                    <div className="sendButton">
+                        <button>
 
+                        </button>
+                    </div>
                 </div>
                 <div style={{marginTop:'2vh'}}>
                     <label><h3>content</h3></label>
                     <textarea required name='userContent' placeholder="" value={info.content} onChange={(e) => setInfo({...info, content: e.target.value})}/>
                 </div>
-                <input type='submit' value="send"/>
+                <div className="sendMobileButton">
+                    <input type='submit' value="send"/>
+                </div>
             </form>
         </div>
     );

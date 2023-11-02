@@ -40,7 +40,6 @@ p {
   display: inline;
   font-size: 1.2rem;
   text-align: left;
-  margin: 0px;
 }
 label{
   display: block;
@@ -52,6 +51,7 @@ textarea{
   resize: none;
   height: 25vh;
   margin-top: 10px;
+  box-sizing: border-box;
 }
 .p-front{
   color: $neonpurple;
@@ -114,6 +114,7 @@ textarea{
   transition-timing-function: ease-out;
   padding: 5px;
   border-radius: 7px;
+  margin: 0px;
   //border: 3px solid $neonpurple;
 }
 .skillR{
@@ -140,7 +141,14 @@ textarea{
 .contact{
   box-sizing: border-box;
   height: 100vh;
-  padding:20vh 15vw 20vh 15vw;
+  padding:0vh 15vw 20vh 15vw;
+}
+.sendButton {
+  flex-grow: 3;
+}
+.sendMobileButton {
+  width: 100%;
+  display: none;
 }
 .infoCon{
   background: $navyPurple;
@@ -241,11 +249,13 @@ textarea{
 }
 .formField{
   margin-top: 2vh;
-  width: 30%;
+  flex-grow: 0.5;
+  flex-shrink: 3;
 }
 .formInput{
   display: block;
   margin-top: 10px;
+  box-sizing: border-box;
   width: 100%;
 }
 @media (max-width: 800px) {
@@ -277,6 +287,14 @@ textarea{
     margin: 0px;
     position: relative;
     z-index:900;
+  }
+}
+@media (max-width: 1400px) {
+  .sendButton{
+    display: none;
+  }
+  .sendMobileButton{
+    display: block;
   }
 }
 span{

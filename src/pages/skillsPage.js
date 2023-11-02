@@ -8,17 +8,17 @@ import SkillBlob from '../components/skillBlob';
 export default function Skills(){
     const [selectedText, setSelectedText] = useState("");
     const isMobile = window.innerWidth < 750;
+    const cameraControlRef = useRef(null);
+
     const HandleChange = (newSkill) => {
         if(selectedText==''){
             setSelectedText(newSkill); 
             cameraControlRef.current?.rotate(Math.PI, 0, true);
         } else if(selectedText!=newSkill){
-            cameraControlRef.current?.rotate(2*Math.PI, 0, true);
-
-            setTimeout(()=> {setSelectedText(newSkill); }, 300);
+            cameraControlRef.current?.rotate(-Math.PI, 0, true);
+            setTimeout(()=> {setSelectedText(newSkill); cameraControlRef.current?.rotate(Math.PI, 0, true);}, 300);
         }
     }
-    const cameraControlRef = useRef(null);
 
     return(
         <div style={{padding: '10vw'}}>
@@ -60,10 +60,10 @@ export default function Skills(){
                     
                 </div>
                 <div style={{position:'absolute', width:'100%', height:'100%', zIndex: "20", display: 'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
-                    <div style={ isMobile ? {marginTop: '-200px'} : {marginTop: '-300px'}}>
+                    <div style={ isMobile ? { marginLeft:'0px'} : { marginLeft:'10vw'}}>
                         <h2>SKILLS</h2>
                         <div style={isMobile ? {display: 'flex', flexDirection:'column'}:{display: 'flex'}}>
-                            <div style={isMobile ? {display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap', width:'100%'} : {display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap', width:'50%'}}>
+                            <div style={isMobile ? {display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap', width:'100%'} : {display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap', width:'40%'}}>
                                 <p className='skill'> &#123; </p>
                                 <p className='skill' style={ selectedText === 'JS' ? {background: '#7017fc',  cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('JS')}}>javascript</p>
                                 <p className='skill' style={ selectedText === 'PY' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('PY')}}>python</p>
@@ -76,10 +76,14 @@ export default function Skills(){
                                 <p className='skill' style={ selectedText === 'REACT' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('REACT')}}>react</p>
                                 <p className='skill' style={ selectedText === 'NODE' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('NODE')}}>node</p>
                                 <p className='skill' style={ selectedText === 'THREE' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('THREE')}}>three</p>
-                                <p className='skill' style={ selectedText === 'NEXT' ? {background: '#7017fc',  cursor: 'pointer'} : {cursor: 'pointer'}}onClick={()=>{ HandleChange('NEXT')}}>next</p>
+                                <p className='skill' style={ selectedText === 'GIT' ? {background: '#7017fc',  cursor: 'pointer'} : {cursor: 'pointer'}}onClick={()=>{ HandleChange('GIT')}}>git</p>
                                 <p className='skill'> &#125; </p>
                             </div>
                             <div style={isMobile ? {width: '100%'} : {width: '50%'}} />
+                        </div>
+                        <div style={{marginTop:'40px'}}>
+                            <p> {selectedText} history: dawdad</p>
+                        
                         </div>
                     </div>
                 </div>
