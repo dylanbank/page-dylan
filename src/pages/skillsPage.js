@@ -63,7 +63,7 @@ export default function Skills(){
                     <div style={ isMobile ? { marginLeft:'0px'} : { marginLeft:'10vw'}}>
                         <h2>SKILLS</h2>
                         <div style={isMobile ? {display: 'flex', flexDirection:'column'}:{display: 'flex'}}>
-                            <div style={isMobile ? {display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap', width:'100%'} : {display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap', width:'40%'}}>
+                            <div style={isMobile ? {display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap', width:'100%'} : {display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap', width:'40%', flexBasis:'30%'}}>
                                 <p className='skill'> &#123; </p>
                                 <p className='skill' style={ selectedText === 'JS' ? {background: '#7017fc',  cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('JS')}}>javascript</p>
                                 <p className='skill' style={ selectedText === 'PY' ? {background: '#7017fc', cursor: 'pointer'} : {borderLeft: "none", cursor: 'pointer'}}onClick={()=>{ HandleChange('PY')}}>python</p>
