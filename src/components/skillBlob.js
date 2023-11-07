@@ -13,7 +13,7 @@ export default function SkillBlob(){
       <mesh>
           <mesh
       position={[0, 0, 0]} 
-      scale={isMobile ? 3 *ratio : 2.5}
+      scale={isMobile ?  2.5*ratio : 2.5}
     >
       <Sphere visible args={[1, 100, 200]}>
         <MeshDistortMaterial 

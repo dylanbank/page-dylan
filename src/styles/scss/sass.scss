@@ -63,7 +63,6 @@ textarea{
 .App{
   background-color: $navyPurple;
   background-size: cover;
-  height: 400vh;
   
 }
 .hero{
@@ -84,8 +83,13 @@ textarea{
   position: relative;
 }
 .skillWrapper{
-  background-image: url('../../assets/dylanpageHero.png');
-  padding: 20vw;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.03);
+  width: 40%;
+  border-radius: 25px;
+  margin-top: 30px;
+  
+  backdrop-filter: blur(20px);
 }
 .skillPicGroup{
   margin-top: 2vh;
@@ -113,17 +117,24 @@ textarea{
   align-items: center;
   width: 22vw;
 }
+.nested{
+  border-left: 1px solid #7017fc;
+  overflow:hidden;
+  max-height: 600px;
+  transition: max-height 1s;
+  margin: 0px;
+}
 .skill{
   transition: border-bottom 0.1s;
   transition-timing-function: ease-out;
   padding: 5px;
   border-radius: 7px;
-  margin: 0px;
-  //border: 3px solid $neonpurple;
+  margin: 0;
+  margin-left: 2vw;
+  cursor: pointer;
+  display: inline-block;
 }
-.skillR{
-  text-align: right;
-}
+
 .skillPic{
   border-radius: 5px;
   background-size: cover;
@@ -144,12 +155,9 @@ textarea{
 }
 .contact{
   box-sizing: border-box;
-  height: 100vh;
-  padding:0vh 15vw 20vh 15vw;
+  padding:0vh 15vw 30vh 15vw;
 }
-.sendButton {
-  flex-grow: 3;
-}
+
 .sendMobileButton {
   width: 100%;
   display: none;
@@ -159,9 +167,36 @@ textarea{
   justify-content: center; 
   align-items: center; 
   background-color: #7017fc; 
-  border-radius: '8px';
+  border-radius: 8px;
   position: absolute;
   cursor: pointer;
+  transition: left 1s, opacity 1s;
+  margin-left: -75px;
+}
+.socials{
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  justify-content: space-between;
+  margin-left: 50px;
+}
+.socialWrap{
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width:100px;
+  height: 100px;
+  background-color: $neonpurple;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.social{
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width:40px;
+  height: 40px;
 }
 .infoCon{
   background: $navyPurple;
@@ -279,6 +314,23 @@ textarea{
   background-repeat: no-repeat;
 }
 @media (max-width: 800px) {
+  .skillWrapper{
+    width: auto;
+  }
+  .socials{
+    flex-direction: row;
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 100px
+  }
+  .socialWrap{
+    height: 75px;
+    width: 75px;
+  }
+  .social{
+    height: 30px;
+    width: 30px;
+  }
   .flex {
     display: flex;
     flex-direction: column;
@@ -296,6 +348,10 @@ textarea{
     background-repeat: no-repeat;
     border-radius: 8px;
   }
+  .contact{
+    box-sizing: border-box;
+    padding:0vh 15vw 15vh 15vw;
+  }
 }
 @media (max-width: 600px) {
   h3 {
@@ -310,12 +366,7 @@ textarea{
   }
 }
 @media (max-width: 1400px) {
-  .sendButton{
-    display: none;
-  }
-  .sendMobileButton{
-    display: block;
-  }
+  
 }
 span{
   display: block;

@@ -13,7 +13,7 @@ import AWS from "../assets/awsLogo.png";
 import REACT from "../assets/reactLogo.png";
 import NODE from "../assets/nodeLogo.png";
 import THREE from "../assets/threeLogo.png";
-import GIT from '../assets/githubLogo.png';
+import GIT from '../assets/githubWLogo.png';
 
 export default function SkillSheet({ ...props}) {
   const [ selectedTexture , setSelectedTexture] = useState(null);
@@ -48,7 +48,7 @@ export default function SkillSheet({ ...props}) {
   return (
     <>
       <mesh
-        position={[-1.1 * ratio, 0, isMobile ? -2.5 : -3]}
+        position={[-0.5 * ratio, 0, isMobile ? -2.5 : -3]}
         scale={ isMobile ? 0.8*ratio : 0.6}
         rotation={[Math.PI/8, Math.PI, -Math.PI/16]}
       >
