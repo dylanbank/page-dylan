@@ -52,22 +52,22 @@ export default function Skills(){
             'experience': 'i am most proficient in this language',
             'length': '2 years',
         },
-        "JS":{
+        "HTML":{
+            "name": 'html',
+            'experience': 'from custom widgets to building out full websites and apps',
+            'length': '3 years',
+        },
+        "CSS":{
+            "name": 'css',
+            'experience': 'designed and catered visions to clients',
+            'length': '2 years',
+        },
+        "AWS":{
             "name": 'javascript',
             'experience': 'i am most proficient in this language',
             'length': '2 years',
         },
-        "JS":{
-            "name": 'javascript',
-            'experience': 'i am most proficient in this language',
-            'length': '2 years',
-        },
-        "JS":{
-            "name": 'javascript',
-            'experience': 'i am most proficient in this language',
-            'length': '2 years',
-        },
-        "JS":{
+        "REACT":{
             "name": 'javascript',
             'experience': 'i am most proficient in this language',
             'length': '2 years',
@@ -154,8 +154,6 @@ export default function Skills(){
                                 <p className='skill' style={ selectedText === 'CSS' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('CSS')}}>"css"</p><p >:</p>
                                 <br/> 
                                 <p className='skill' style={ selectedText === 'AWS' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('AWS')}}>"aws"</p><p >:</p>
-                                <br/>
-                                <p className='skill' style={ selectedText === 'REST' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('REST')}}>"rest api"</p><p >:</p>
                                 <br/> 
                                 <p className='skill' style={ selectedText === 'REACT' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('REACT')}}>"react"</p><p >:</p>
                                 <br/>

@@ -173,6 +173,21 @@ textarea{
   transition: left 1s, opacity 1s;
   margin-left: -75px;
 }
+.sendMobileButton:before {
+  content: '';
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url('../../assets/icons/motionLines.png');
+  width:60px;
+  height:30px;
+  position: absolute;
+  margin-left: -135px;
+  display: none;
+}
+.sendMobileButton.clicked:before {
+  display: block;
+}
 .socials{
   display: flex;
   flex-direction: column;

@@ -7,18 +7,24 @@ import LI from '../assets/linkedin.png'
 export default function Contact(){
     const [ info, setInfo ] = useState({email: null, name: null, subject: null, content: null});
     const [ sent, setSent] = useState(false);
+    const [ visibleBtn, setVisibleBtn ] = useState(true);
     const isMobile = window.innerWidth < 1500;
     const form = useRef();
 
     const HandleSubmit = (e) => {
         e.preventDefault();
-
+        
+        setTimeout(()=>{
+            setVisibleBtn(false);
+        }, 1000);
+        
         emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
         .then((result) => {
             console.log(result.text);
         }, (error) => {
             console.log(error.text);
         });
+        
     };
 
 
@@ -26,7 +32,7 @@ export default function Contact(){
         <div className="contact">
             <h2>CONTACT ME</h2>
             <div className="flex">
-                <form id='contactForm' onSubmit={HandleSubmit} ref={form} style={{flexGrow: '4'}}>
+                <form id='contactForm' ref={form} style={{flexGrow: '4'}}>
                     <div className="flex" style={{width:'100%', gap: '5%', justifyContent: 'flex-start'}}>
                         <div className="formField">
                             <label><h3>your email</h3></label>
@@ -49,21 +55,23 @@ export default function Contact(){
                         <div style={{position: 'absolute'}}>
                             <p>sent!</p>
                         </div>
-                        <a className='sendMobileButton' onClick={()=>{/*document.getElementById("contactForm").submit();*/ setSent(true)}} style={sent ?{left:'100%', opacity: '0'}:{left:'75px', opacity: '100%'} }>
-                            <div className="sendEmail" style={{width: '30px', height: '20px'}} />
-                        </a>
+                        { visibleBtn &&
+                            <a className={`sendMobileButton ${sent ? 'clicked' : ''}`} onClick={(e)=>{HandleSubmit(e); setSent(true)}} style={sent ?{left:'100%', opacity: '0'}:{left:'75px', opacity: '100%'} }>
+                                <div className="sendEmail" style={{width: '30px', height: '20px'}} />
+                            </a>
+                        }
                     </div>
                 </form>
                 <div className="socials" >
-                    <div className="socialWrap">
+                    <a className="socialWrap" href={'https://www.linkedin.com/in/dylan-windebank-8a19a4194/'}>
                         <div className="social" style={{backgroundImage: `url(${LI})`}} />
-                    </div>
-                    <div className="socialWrap">
+                    </a>
+                    <a className="socialWrap" href={'https://github.com/dylanbank'}>
                         <div className="social" style={{backgroundImage: `url(${GIT})`}} />
-                    </div>
-                    <div className="socialWrap">    
+                    </a>
+                    <a className="socialWrap" href={'https://twitter.com/dbanq_'}>    
                         <div className="social" style={{backgroundImage: `url(${TWIT})`}} />
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

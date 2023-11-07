@@ -8,7 +8,6 @@ import CPP from "../assets/cppLogo.png"
 import SQL from "../assets/sqlLogo.png"
 import CSS from "../assets/cssLogo.png";
 import HTML from "../assets/htmlLogo.png";
-import REST from "../assets/restLogo.png";
 import AWS from "../assets/awsLogo.png";
 import REACT from "../assets/reactLogo.png";
 import NODE from "../assets/nodeLogo.png";
@@ -35,7 +34,6 @@ export default function SkillSheet({ ...props}) {
       SQL: useLoader(TextureLoader, SQL),
       CSS: useLoader(TextureLoader, CSS),
       HTML: useLoader(TextureLoader, HTML),
-      REST: useLoader(TextureLoader, REST),
       AWS: useLoader(TextureLoader, AWS),
       REACT: useLoader(TextureLoader, REACT),
       NODE: useLoader(TextureLoader, NODE),
