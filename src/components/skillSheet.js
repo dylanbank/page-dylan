@@ -16,16 +16,25 @@ import GIT from '../assets/githubWLogo.png';
 
 export default function SkillSheet({ ...props}) {
   const [ selectedTexture , setSelectedTexture] = useState(null);
-  const [ ratio, setRatio ] = useState(window.innerWidth/1080)
+  const [ ratio, setRatio ] = useState(window.innerWidth/1080);
+  const [ mobile, setMobile ] = useState(window.innerWidth < 750)
   useEffect(()=> {
     setSelectedTexture(texture[props.selected]);
     console.log(props.selected)
     console.log(selectedTexture)
   }, [props.selected]);
   
-  useEffect(()=> {
+  useEffect(()=>{
+    function handleResize(){
       setRatio(window.innerWidth/1080);
-  }, [window.innerWidth]);
+      setMobile(window.innerWidth < 800);
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, [])
+
 
   const texture = {
       JS: useLoader(TextureLoader, JS),
@@ -41,13 +50,12 @@ export default function SkillSheet({ ...props}) {
       GIT: useLoader(TextureLoader, GIT),
   };
 
-  const isMobile = window.innerWidth < 750;
 
   return (
     <>
       <mesh
-        position={[-0.5 * ratio, 0, isMobile ? -2.5 : -3]}
-        scale={ isMobile ? 0.8*ratio : 0.6}
+        position={[-0.5 * ratio, 0, mobile ? -2.5 : -3]}
+        scale={ 0.35*ratio}
         rotation={[Math.PI/8, Math.PI, -Math.PI/16]}
       >
         { selectedTexture && 

@@ -9,15 +9,12 @@ export default function Skills(){
     const [selectedText, setSelectedText] = useState("JS");
     const isMobile = window.innerWidth < 750;
     const cameraControlRef = useRef(null);
-    const titleRef = useRef(null);
+    const nestedRef = useRef(null);
     const [open, setOpen] = useState(false);
-    const [openAni, setOpenAni] = useState(false);
     const [height, setHeight] = useState(null);
     const Expand = () => {
-        console.log((openAni))
         setOpen(!open);
-        openAni ? setTimeout(()=>setOpenAni(!openAni), 1000) : setOpenAni(!openAni);
-        console.log((openAni))
+        
     }
     const HandleChange = (newSkill) => {
         if(newSkill===''){
@@ -31,74 +28,77 @@ export default function Skills(){
             setTimeout(()=> {setSelectedText(newSkill); cameraControlRef.current?.rotate(Math.PI, 0, true);}, 300);
         }
     }
+
     useEffect(()=>{
-        setHeight(titleRef.current.style.maxHeight);
-    }, []);
+        if(nestedRef.current){
+            const observer = new ResizeObserver(entries => {
+                for (const entry of entries) {
+                    const newSize = entry.contentRect;
+                    console.log('Div resized to:', newSize);
+                    setHeight(newSize.height)
+                }
+                });
+        
+            // Start observing the div.
+            observer.observe(nestedRef.current);
+    
+            // Don't forget to disconnect the observer when the component unmounts.
+            return () => {
+                observer.disconnect();
+            };
+        }
+      }, []);
+
+    
     const Skill = {
         "JS":{
-            'experience': 'i am most proficient in this language',
+            'name': 'javascript',
+            'description': 'i am most proficient in this language',
             'favorite': 'true',
-            'length': '3 years',
+            'time': '3',
         },
         "PY":{
-            'experience': 'i have used this language for image processing (scipy.py) and manipulating data (pandas.py)',
-            'length': '1 year',
+            'name': 'python',
+            'description': 'i have used this language for image processing (scipy.py) and manipulating data (pandas.py)',
+            'time': '1',
         },
         "SQL":{
-            'experience': 'i have used this language to interact with production databases',
-            'length': '2 years',
+            'name': 'sql',
+            'description': 'i have used this language to interact with production databases',
+            'time': '2',
         },
         "CPP":{
-            'experience': 'i am most proficient in this language',
-            'length': '2 years',
+            'name': 'cpp',
+            'description': 'i am most proficient in this language',
+            'time': '2',
         },
         "HTML":{
             "name": 'html',
-            'experience': 'from custom widgets to building out full websites and apps',
-            'length': '3 years',
+            'description': 'from custom widgets to building out full websites and apps',
+            'time': '3',
         },
         "CSS":{
             "name": 'css',
-            'experience': 'designed and catered visions to clients',
-            'length': '2 years',
+            'description': 'designed and catered visions to clients',
+            'time': '2',
         },
         "AWS":{
-            "name": 'javascript',
-            'experience': 'i am most proficient in this language',
-            'length': '2 years',
+            "name": 'aws',
+            'description': 'i am most proficient in this language',
+            'time': '2',
         },
-        "REACT":{
-            "name": 'javascript',
-            'experience': 'i am most proficient in this language',
-            'length': '2 years',
-        },
-        "JS":{
-            "name": 'javascript',
-            'experience': 'i am most proficient in this language',
-            'length': '2 years',
-        },
-        "JS":{
-            "name": 'javascript',
-            'experience': 'i am most proficient in this language',
-            'length': '2 years',
-        },
-        "JS":{
-            "name": 'javascript',
-            'experience': 'i am most proficient in this language',
-            'length': '2 years',
-        },
-        "JS":{
-            "name": 'javascript',
-            'experience': 'i am most proficient in this language',
-            'length': '2 years',
+        "NODE":{
+            "name": 'node',
+            'description': 'i am most proficient in this language',
+            'time': '2',
         },
 
         
     }
     return(
-        <div style={{padding: '15vw'}}>
+        <div className='skillPadding'>
             <div className="skills flex">
-                <div>
+                <div className='skillRender'>
                     <Canvas style={{width:'100%', height:'100%', top:'0', left:'0', position:'absolute', zIndex:'15'}}> 
                         <pointLight color="#ffffff" position={[0, 0, 10]} intensity={0.1}/>
                         <pointLight color="#ffffff" position={[0, 0, -10]} intensity={0.1}/>
@@ -137,34 +137,43 @@ export default function Skills(){
                 <div style={{position:'absolute', width:'100%', height:'100%', zIndex: "20", display: 'flex', flexDirection:'column', justifyContent:'center', alignItems:'flexStart'}}>
                     <h2 style={{cursor: 'pointer'}} onClick={()=>{ Expand(); HandleChange("")}}>SKILLS:</h2>
                     <div className="skillWrapper" >
-                            {height}
-                            <p > &#123; </p> {height==='0px' ? <p> &#125; </p> : ''}
-                            <div ref={titleRef} className='nested' style={ open ? {maxHeight:'600px'} : {maxHeight: '0'}}>
+                            <p > &#123; </p> {height===0 ? <p> ... &#125; </p> : ''}
+                            <div className='nested' ref={nestedRef} style={ open ? {maxHeight:'600px'} : {maxHeight: '0'}}>
+                                {Object.keys(Skill).map((key, index)=>(
+                                    <div>
+                                        <p className='skill' style={ selectedText === key ? {background: '#7017fc'} : {}} onClick={()=>{ HandleChange(key)}}>"{Skill[key].name}"</p><p >&nbsp;&nbsp;:&nbsp;&nbsp;</p>
+                                        {selectedText === key ? <p> &#123; </p> : <><p className='loading'>&#123;&nbsp;</p><p>&nbsp;&#125;,</p></>}
+                                        
+                                        <div className='nested nestedSub' style={ selectedText === key ? {maxHeight:'600px'} : {maxHeight: '0'}}> 
+                                            <div style={{paddingLeft: '1.5em', textIndent: '-1.5em', display:'inline-block'}}>
+                                                <p className='description'>"description"</p>
+                                                <p>&nbsp;&nbsp;:&nbsp;&nbsp;</p>
+                                                <p style={{color:'#b8d8be'}}>"{Skill[key].description}"</p>
+                                                <p>,</p>
+                                                <br/>
+                                            </div>
+                                            <p className='yearsSpent'>"yearsSpent"</p>
+                                            <p>&nbsp;&nbsp;:&nbsp;&nbsp;</p>
+                                            <p style={{color: '#FAC898'}}>{Skill[key].time}</p>
+                                            <p>,</p>
+                                            <br/>
+                                            {Skill[key].favorite ==='true' ?
+                                                <>
+                                                <p className='favorite'>"favorite"</p>
+                                                <p>&nbsp;&nbsp;:&nbsp;&nbsp;</p>
+                                                <p style={{color:'#E1756F'}}>{Skill[key].favorite}</p> 
+                                                <p>,</p>
+                                                
+                                                </>
+                                            : ''}
+                                        </div> 
+                                        { selectedText === key ? <p className='closedBracket'> &#125;, </p> : '' }
+                                    </div>
+                                    
+                                ))}
                                 
-                                <p className='skill' style={ selectedText === 'JS' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('JS')}}>"javascript"</p><p >:</p>
-                                <br/> 
-                                <p className='skill' style={ selectedText === 'PY' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('PY')}}>"python"</p><p >:</p>
-                                <br/> 
-                                <p className='skill' style={ selectedText === 'SQL' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('SQL')}}>"sql"</p><p >:</p>
-                                <br/> 
-                                <p className='skill' style={ selectedText === 'CPP' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('CPP')}}>"c++"</p><p >:</p>
-                                <br/> 
-                                <p className='skill' style={ selectedText === 'HTML' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('HTML')}}>"html"</p><p >:</p>
-                                <br/> 
-                                <p className='skill' style={ selectedText === 'CSS' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('CSS')}}>"css"</p><p >:</p>
-                                <br/> 
-                                <p className='skill' style={ selectedText === 'AWS' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('AWS')}}>"aws"</p><p >:</p>
-                                <br/> 
-                                <p className='skill' style={ selectedText === 'REACT' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('REACT')}}>"react"</p><p >:</p>
-                                <br/>
-                                <p className='skill' style={ selectedText === 'NODE' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('NODE')}}>"node"</p><p >:</p>
-                                <br/> 
-                                <p className='skill' style={ selectedText === 'THREE' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('THREE')}}>"three"</p><p >:</p>
-                                <br/> 
-                                <p className='skill' style={ selectedText === 'GIT' ? {background: '#7017fc'} : {}}onClick={()=>{ HandleChange('GIT')}}>"git"</p><p>:</p>
-                                <br/>
                             </div>
-                            {height ? '' : <p> &#125; </p>}
+                            {height===0? '' : <p> &#125; </p>}
                         
                     </div>
                 </div>

@@ -5,15 +5,20 @@ export default function SkillBlob(){
   const [ ratio, setRatio ] = useState(window.innerWidth/1080)
   const isMobile = window.innerWidth < 750;
 
-  useEffect(()=> {
-      setRatio(window.innerWidth/1080);
-  }, [window.innerWidth]);
+  useEffect(()=>{
+    function handleResize(){
+      setRatio(window.innerWidth/1080)
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, [])
 
   return(
-      <mesh>
-          <mesh
+      <mesh
       position={[0, 0, 0]} 
-      scale={isMobile ?  2.5*ratio : 2.5}
+      scale={1.5*ratio}
     >
       <Sphere visible args={[1, 100, 200]}>
         <MeshDistortMaterial 
@@ -25,6 +30,6 @@ export default function SkillBlob(){
         />
       </Sphere>
     </mesh>
-      </mesh>
+
   );
 }

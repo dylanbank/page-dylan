@@ -13,17 +13,21 @@ export default function Contact(){
 
     const HandleSubmit = (e) => {
         e.preventDefault();
-        
-        setTimeout(()=>{
-            setVisibleBtn(false);
-        }, 1000);
-        
-        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
-        .then((result) => {
-            console.log(result.text);
-        }, (error) => {
-            console.log(error.text);
-        });
+
+        if(info.email && info.name && info.subject && info.content){
+            setTimeout(()=>{
+                setVisibleBtn(false);
+            }, 1000);
+            setSent(true);
+            emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+        }else{
+            alert("fill out all fields");
+        }
         
     };
 
@@ -56,7 +60,7 @@ export default function Contact(){
                             <p>sent!</p>
                         </div>
                         { visibleBtn &&
-                            <a className={`sendMobileButton ${sent ? 'clicked' : ''}`} onClick={(e)=>{HandleSubmit(e); setSent(true)}} style={sent ?{left:'100%', opacity: '0'}:{left:'75px', opacity: '100%'} }>
+                            <a className={`sendMobileButton ${sent ? 'clicked' : ''}`} onClick={(e)=>{HandleSubmit(e)}} style={sent ?{left:'100%', opacity: '0'}:{left:'75px', opacity: '100%'} }>
                                 <div className="sendEmail" style={{width: '30px', height: '20px'}} />
                             </a>
                         }
