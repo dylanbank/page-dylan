@@ -26,13 +26,7 @@ export default function Skills(){
         
     }
     const HandleChange = (newSkill) => {
-        if(newSkill===''){
-            cameraControlRef.current?.rotate(-Math.PI, 0, true);
-        }
-        else if(selectedText==''){
-            setSelectedText(newSkill); 
-            cameraControlRef.current?.rotate(-Math.PI, 0, true);
-        } else if(selectedText!=newSkill){
+        if(selectedText!=newSkill){
             cameraControlRef.current?.rotate(-Math.PI, 0, true);
             setTimeout(()=> {setSelectedText(newSkill); cameraControlRef.current?.rotate(Math.PI, 0, true);}, 300);
         }
@@ -220,10 +214,10 @@ export default function Skills(){
                     
                 </div>
                 <div style={{position:'absolute', width:'100%', height:'100%', zIndex: "20", display: 'flex', flexDirection:'column', justifyContent:'center', alignItems:'flexStart'}}>
-                    <h2 style={{cursor: 'pointer'}} onClick={()=>{ Expand(); HandleChange("")}}>SKILLS:</h2>
+                    <h2>SKILLS:</h2>
                     <div className="skillWrapper" >
                             <p > &#123; </p> {height===0 ? <p> ... &#125; </p> : ''}
-                            <div className='nested' ref={nestedRef} style={ open ? {maxHeight:'600px'} : {maxHeight: '0'}}>
+                            <div className='nested' ref={nestedRef}>
                                 {Object.keys(Skill).map((key, index)=>(
                                     <div>
                                         <p className='skill' style={ selectedText === key ? {background: '#7017fc'} : {}} onClick={()=>{ HandleChange(key)}}>"{Skill[key].name}"</p><p >&nbsp;&nbsp;:&nbsp;&nbsp;</p>
@@ -259,7 +253,7 @@ export default function Skills(){
                                 ))}
                                 
                             </div>
-                            {height===0? '' : <p> &#125; </p>}
+                            {height===0 ? '' : <p> &#125; </p>}
                         
                     </div>
                 </div>
