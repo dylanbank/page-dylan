@@ -18,7 +18,7 @@ export default function SkillBlob(){
   return(
       <mesh
       position={[0, 0, 0]} 
-      scale={1.5*ratio}
+      scale={1.3*ratio}
     >
       <Sphere visible args={[1, 100, 200]}>
         <MeshDistortMaterial 

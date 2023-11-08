@@ -1,0 +1,64 @@
+@import "colors";
+
+html{
+    background-color: $navyPurple;
+    background-size: cover;
+}
+h1 {
+    font-family: 'Righteous', cursive;
+    color: $white;
+    font-size: 3vw;
+    margin: 0 0 4vh 0 ;
+}
+h2{
+    font-family: 'Righteous', cursive;
+    color: $white;
+    font-size: 5vw;
+    text-align: left;
+    margin: 0px;
+    transform: scale(1, 0.7);
+}
+h3{
+    font-family: 'Righteous', cursive;
+    color: $white;
+    display: inline;
+    font-size: 1.2rem;
+    text-align: left;
+    margin: 0px;
+    position: relative;
+    z-index:900; 
+}
+p {
+    font-family: 'Righteous', cursive;
+    color: $white;
+    display: inline;
+    font-size: 1.2rem;
+    text-align: left;
+    margin: 0px;
+}
+label{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+}
+input {
+    border-radius: 8px;
+}
+textarea{
+    border-radius: 8px;
+    width: 100%;
+    resize: none;
+    height: 25vh;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+span{
+    display: block;
+  
+    height: 100%;
+    color: $lightNP;
+    animation: spin_words 7s infinite;
+}
+.p-front{
+    color: $neonpurple;
+}
