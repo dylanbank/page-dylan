@@ -41,7 +41,6 @@
 .nested{
   border-left: 1px solid #7017fc;
   overflow:hidden;
-  max-height: 600px;
   transition: max-height 1s;
   margin: 0px;
 }
@@ -49,11 +48,11 @@
   margin: 5px 0px 5px 2vw;
   padding-left: 4vw;
   margin-left: 4vw;
-  transition: max-height 0s;
+  //transition: max-height 0s;
 }
 
 
-.skill:hover ~ .loading:after {
+.skill:hover ~ .loading:before {
   overflow: hidden;
   display: inline-block;
   vertical-align: bottom;

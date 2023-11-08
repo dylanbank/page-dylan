@@ -10,8 +10,17 @@ export default function Skills(){
     const isMobile = window.innerWidth < 750;
     const cameraControlRef = useRef(null);
     const nestedRef = useRef(null);
+    const skillsRef = useRef([])
     const [open, setOpen] = useState(false);
     const [height, setHeight] = useState(null);
+    const [jsHeight, setJSHeight] = useState(null);
+    const [pyHeight, setPYHeight] = useState(null);
+    const [sqlHeight, setSQLHeight] = useState(null);
+    const [cppHeight, setCPPHeight] = useState(null);
+    const [htmlHeight, setHTMLHeight] = useState(null);
+    const [cssHeight, setCSSHeight] = useState(null);
+    const [awsHeight, setAWSHeight] = useState(null);
+    const [nodeHeight, setNodeHeight] = useState(null);
     const Expand = () => {
         setOpen(!open);
         
@@ -30,6 +39,7 @@ export default function Skills(){
     }
 
     useEffect(()=>{
+        /*
         if(nestedRef.current){
             const observer = new ResizeObserver(entries => {
                 for (const entry of entries) {
@@ -47,6 +57,53 @@ export default function Skills(){
                 observer.disconnect();
             };
         }
+        */
+        if(skillsRef.current){
+            skillsRef.current.forEach((skillRef, index) => {
+                new ResizeObserver(entries => {
+                    for (const entry of entries) {
+                        const newSize = entry.contentRect;
+                        console.log('Div resized to:', newSize);
+                        var key = Object.keys(Skill)[index];
+                        console.log(key+'this is key');
+                        switch(key){
+                            case 'JS':
+                                setJSHeight(newSize.height)
+                                break;
+                            case 'PY':
+                                setPYHeight(newSize.height)
+                                break;
+                            case 'SQL':
+                                setSQLHeight(newSize.height)
+                                break;
+                            case 'CPP':
+                                setCPPHeight(newSize.height)
+                                break;
+                            case 'HTML':
+                                setHTMLHeight(newSize.height)
+                                break;
+                            case 'CSS':
+                                setCSSHeight(newSize.height)
+                                break;
+                            case 'AWS':
+                                setAWSHeight(newSize.height)
+                                break;
+                            case 'NODE':
+                                setNodeHeight(newSize.height)
+                                break;
+                        
+                        }
+                    }
+                }).observe(skillRef)
+            });
+        
+            // Start observing the div.
+            
+    
+            // Don't forget to disconnect the observer when the component unmounts.
+            
+        }
+        
       }, []);
 
     
@@ -95,6 +152,34 @@ export default function Skills(){
 
         
     }
+    const whichSkillHeight = (key) =>{
+        switch(key){
+            case 'JS':
+                return jsHeight;
+                break;
+            case 'PY':
+                return pyHeight;
+                break;
+            case 'SQL':
+                return sqlHeight;
+                break;
+            case 'CPP':
+                return cppHeight;
+                break;
+            case 'HTML':
+                return htmlHeight;
+                break;
+            case 'CSS':
+                return cssHeight;
+                break;
+            case 'AWS':
+                return awsHeight;
+                break;
+            case 'NODE':
+                return nodeHeight;
+                break;
+        }
+    }
     return(
         <div className='skillPadding'>
             <div className="skills flex">
@@ -142,9 +227,10 @@ export default function Skills(){
                                 {Object.keys(Skill).map((key, index)=>(
                                     <div>
                                         <p className='skill' style={ selectedText === key ? {background: '#7017fc'} : {}} onClick={()=>{ HandleChange(key)}}>"{Skill[key].name}"</p><p >&nbsp;&nbsp;:&nbsp;&nbsp;</p>
-                                        {selectedText === key ? <p> &#123; </p> : <><p className='loading'>&#123;&nbsp;</p><p>&nbsp;&#125;,</p></>}
+                                        <p>&#123;&nbsp;</p>
+                                        {(whichSkillHeight(key))!== 0 ? '' : <p className='loading'> &#125; </p>}
                                         
-                                        <div className='nested nestedSub' style={ selectedText === key ? {maxHeight:'600px'} : {maxHeight: '0'}}> 
+                                        <div className='nested nestedSub' ref={(el)=>skillsRef.current[index]=el} style={ selectedText === key ? {maxHeight:'100px'} : {maxHeight: '0'}}> 
                                             <div style={{paddingLeft: '1.5em', textIndent: '-1.5em', display:'inline-block'}}>
                                                 <p className='description'>"description"</p>
                                                 <p>&nbsp;&nbsp;:&nbsp;&nbsp;</p>
@@ -167,7 +253,7 @@ export default function Skills(){
                                                 </>
                                             : ''}
                                         </div> 
-                                        { selectedText === key ? <p className='closedBracket'> &#125;, </p> : '' }
+                                        { whichSkillHeight(key)!==0 ? <p className='closedBracket'> &#125;, </p> : '' }
                                     </div>
                                     
                                 ))}
