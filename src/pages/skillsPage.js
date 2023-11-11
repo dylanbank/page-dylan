@@ -247,7 +247,7 @@ export default function Skills(){
                                                 </>
                                             : ''}
                                         </div> 
-                                        { whichSkillHeight(key)!==0 ? <p className='closedBracket'> &#125;, </p> : '' }
+                                        <p className='closedBracket' style={whichSkillHeight(key)!==0 ? { display: 'block'} : { display: 'none', paddingTop: '1.513rem'}}> &#125;, </p>
                                     </div>
                                     
                                 ))}

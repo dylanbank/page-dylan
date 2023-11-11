@@ -156,8 +156,8 @@
   display: flex; 
   justify-content: center; 
   align-items: center; 
-  width:100px;
-  height: 100px;
+  width:85px;
+  height: 85px;
   background-color: $neonpurple;
   border-radius: 50px;
   cursor: pointer;
@@ -278,6 +278,46 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.hobbies{
+  padding-bottom: 20vh;
+  box-sizing: border-box;
+}
+.hobbyContainer{
+  display: flex;
+  height: 60vh; 
+  gap: 50px;
+  margin-top: 30px;
+}
+.hobby{
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+  flex-grow: 1;
+  transition: all 0.5s ease-in;
+}
+
+.hobby:hover{
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.climb{
+  background-image: url('../../assets/dylanClimb.jpg');
+  display: block
+}
+.ski{
+  background-image: url('../../assets/dylanSki.jpg');
+  display: block;
+}
+.game{
+  background-image: url('../../assets/dylanGame.jpg');
+  display: block;
 }
 
 @media (max-width: 800px) {
