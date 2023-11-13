@@ -36,10 +36,10 @@
 }
 
 .skillPadding{
-  padding: 15vw 0 15vw 15vw;
+  padding-left: 15vw;
 }
 .nested{
-  border-left: 1px solid #7017fc;
+  border-left: 1px solid $neonorange;
   overflow:hidden;
   transition: max-height 1s;
   margin: 0px;
@@ -107,12 +107,12 @@
 .about{
   box-sizing: border-box;
   height: 100vh;
-  padding:20vh 15vw 0vh 15vw;
+  padding:20vh 15vw 20vh 15vw;
   gap: 10vw;
 }
 .contact{
   box-sizing: border-box;
-  padding:0vh 15vw 30vh 15vw;
+  padding:20vh 15vw 30vh 15vw;
 }
 
 .sendMobileButton {
@@ -123,7 +123,7 @@
   display: flex; 
   justify-content: center; 
   align-items: center; 
-  background-color: #7017fc; 
+  background-color: $neonorange; 
   border-radius: 8px;
   position: absolute;
   cursor: pointer;
@@ -281,13 +281,13 @@
 }
 
 .hobbies{
-  padding-bottom: 20vh;
+  padding: 20vh 0 20vh 0;
   box-sizing: border-box;
 }
 .hobbyContainer{
   display: flex;
-  height: 60vh; 
-  gap: 50px;
+  height: 25vw; 
+  gap: 3vw;
   margin-top: 30px;
 }
 .hobby{
@@ -309,15 +309,20 @@
 
 .climb{
   background-image: url('../../assets/dylanClimb.jpg');
-  display: block
+  display: block;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 .ski{
   background-image: url('../../assets/dylanSki.jpg');
   display: block;
+  border-radius: 25px;
 }
 .game{
   background-image: url('../../assets/dylanGame.jpg');
   display: block;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 @media (max-width: 800px) {

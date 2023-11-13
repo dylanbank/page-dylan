@@ -1,7 +1,7 @@
 import { useState, useEffect, React } from "react";
 
 
-export default function Navbar(){
+export default function Navbar(props){
 
     const [isTop, setIsTop] = useState(true);
     const [current, setCurrent] = useState({
@@ -47,22 +47,22 @@ export default function Navbar(){
     return(
         <div>
         <div className="nav">
-            <div className="navText" onClick={()=>selectCurrent(1)}>
+            <div className="navText" onClick={()=>{selectCurrent(1); props.homeProps.ScrollToView('about')}}>
                 <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.about ? "nav-selected" : ""}`}>
                     <h3>ABOUT ME</h3>
                 </div>
             </div>
-            <div className="navText" onClick={()=>selectCurrent(2)}>
+            <div className="navText" onClick={()=>{selectCurrent(2); props.homeProps.ScrollToView('skills')}}>
                 <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.skills ? "nav-selected" : ""}`}>
                     <h3>SKILLS</h3>
                 </div>
             </div>
-            <div className="navText" onClick={()=>selectCurrent(3)}>
+            <div className="navText" onClick={()=>{selectCurrent(3); props.homeProps.ScrollToView('hobbies')}}>
                 <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.hobbies ? "nav-selected" : ""}`}>
                     <h3>HOBBIES</h3>
                 </div>
             </div>
-            <div className="navText" onClick={()=>selectCurrent(4)}>
+            <div className="navText" onClick={()=>{selectCurrent(4); props.homeProps.ScrollToView('contact')}}>
                 <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.contact ? "nav-selected" : ""}`}>
                     <h3>CONTACT ME</h3>
                 </div>

@@ -1,11 +1,10 @@
 import Navbar from "../components/navbar";
 
-export default function Intro(){
-    
+export default function Intro(props){
     return(
         
         <div className="hero">
-            <Navbar />
+            <Navbar homeProps={props}/>
             <div className="header flex">
                 <div className="heroPic" />
             <div>

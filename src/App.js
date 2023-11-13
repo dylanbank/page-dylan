@@ -8,12 +8,24 @@ import "./styles/css/sass.css";
 
 function App() {
   
+  const ScrollToView = (id) => {
+    const page = document.getElementById(id);
+
+    if(page){
+      page.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <div className="App">
-      <Intro />
+      <Intro ScrollToView={ScrollToView} />
+      <div id="about" />
       <About />
+      <div id="skills" />
       <Skills />
+      <div id="hobbies" />
       <Hobbies />
+      <div id="contact" />
       <Contact />
     </div>
   );
