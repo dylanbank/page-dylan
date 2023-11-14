@@ -284,11 +284,18 @@
   padding: 20vh 0 20vh 0;
   box-sizing: border-box;
 }
-.hobbyContainer{
+#hobbyContainer{
   display: flex;
-  height: 25vw; 
-  gap: 3vw;
+  height: 30vw; 
+  gap: 5vw;
   margin-top: 30px;
+  overflow-x: auto;
+  max-height: auto;
+  position: relative;
+  
+}
+.hobbiesH2{
+  margin-left: 15vw;
 }
 .hobby{
   background-size: cover;
@@ -297,8 +304,11 @@
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   filter: grayscale(100%);
-  flex-grow: 1;
+  height: 100%;
+  width: 35vw;
   transition: all 0.5s ease-in;
+  position: relative;
+  flex-shrink:0;
 }
 
 .hobby:hover{
@@ -306,7 +316,12 @@
   -moz-filter: grayscale(0%);
   filter: grayscale(0%);
 }
-
+.climb2{
+  background-image: url('../../assets/dylanClimb2.jpeg');
+  display: block;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
 .climb{
   background-image: url('../../assets/dylanClimb.jpg');
   display: block;
@@ -333,7 +348,7 @@
     margin-left: 7vw;
   }
   .skillPadding{
-    padding: 7vw;
+    padding: 10vw;
   }
   .skillWrapper{
     width: auto;
@@ -380,6 +395,9 @@
   .contact{
     box-sizing: border-box;
     padding:0vh 10vw 10vh 10vw;
+  }
+  .hobbiesH2{
+    margin-left: 10vw;
   }
 }
 @media (max-width: 600px) {

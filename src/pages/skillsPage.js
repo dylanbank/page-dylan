@@ -120,12 +120,12 @@ export default function Skills(){
         },
         "CPP":{
             'name': 'cpp',
-            'description': 'i am most proficient in this language',
-            'time': '2',
+            'description': 'i had fundamental knowledge and concepts taught in this language during my undergrad.',
+            'time': '3',
         },
         "HTML":{
             "name": 'html',
-            'description': 'from custom widgets to building out full websites and apps',
+            'description': 'from custom widgets to building out full websites and apps, i am confident in this markup language',
             'time': '3',
         },
         "CSS":{
@@ -135,12 +135,12 @@ export default function Skills(){
         },
         "AWS":{
             "name": 'aws',
-            'description': 'i am most proficient in this language',
+            'description': 'i have used s3, ec2, cloud watch, and lambda in a professional and personal use.',
             'time': '2',
         },
         "NODE":{
             "name": 'node',
-            'description': 'i am most proficient in this language',
+            'description': 'i have utilized node to build multiple frontend and backend applications.',
             'time': '2',
         },
 
@@ -224,7 +224,7 @@ export default function Skills(){
                                         <p>&#123;&nbsp;</p>
                                         {(whichSkillHeight(key))!== 0 ? '' : <p className='loading'> &#125; </p>}
                                         
-                                        <div className='nested nestedSub' ref={(el)=>skillsRef.current[index]=el} style={ selectedText === key ? {maxHeight:'100px'} : {maxHeight: '0'}}> 
+                                        <div className='nested nestedSub' ref={(el)=>skillsRef.current[index]=el} style={ selectedText === key ? {maxHeight:'100px'} : {maxHeight: '0', transition: 'maxHeight 1s'}}> 
                                             <div style={{paddingLeft: '1.5em', textIndent: '-1.5em', display:'inline-block'}}>
                                                 <p className='description'>"description"</p>
                                                 <p>&nbsp;&nbsp;:&nbsp;&nbsp;</p>
