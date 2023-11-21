@@ -286,7 +286,7 @@
 }
 #hobbyContainer{
   display: flex;
-  height: 60vh; 
+  height: 600px; 
   gap: 5vw;
   margin-top: 30px;
   overflow-x: hidden;
@@ -438,6 +438,9 @@
   .hobbiesH2{
     margin: 0 10vw;
 
+  }
+  #hobbyContainer{
+    height: 400px;
   }
 }
 @media (max-width: 600px) {
