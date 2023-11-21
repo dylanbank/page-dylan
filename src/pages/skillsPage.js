@@ -120,7 +120,7 @@ export default function Skills(){
         },
         "CPP":{
             'name': 'cpp',
-            'description': 'i had fundamental knowledge and concepts taught in this language during my undergrad.',
+            'description': 'i learned fundamental programming knowledge and concepts through this language during my undergrad.',
             'time': '3',
         },
         "HTML":{
