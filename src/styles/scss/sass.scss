@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 .App{
-  background-color: $navyPurple;
+  background-color: black;
   background-size: cover;
   
 }
@@ -36,12 +36,13 @@
 }
 
 .skillPadding{
-  padding-left: 15vw;
+  padding: 10vw 0 10vw 15vw;
+  background-color: black;
 }
 .nested{
   border-left: 1px solid $neonorange;
   overflow:hidden;
-  transition: max-height 1s;
+  //transition: max-height 1s;
   margin: 0px;
 }
 .nestedSub{
@@ -328,7 +329,7 @@
 .pairWrapper{
   display: flex;
   justify-content:center;
-  margin-top: -90px;
+  margin-top: -100px;
   z-index: 30;
   position: relative;
 }
@@ -357,7 +358,7 @@
 .leftHobby{
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  background-color: $neonorange;
+  background-color: $neonpurple;
   width: 40vw;
   position: relative;
   flex-shrink:0;
@@ -385,7 +386,7 @@
   display: flex; 
   justify-content: center; 
   align-items: center; 
-  background-color: $lightNP; 
+  background-color: $neonpurple; 
   border-radius: 8px;
   cursor: pointer;
   color: white;
@@ -400,11 +401,25 @@
   height: 20px;
   width: 25px;
 }
+.hobbyBtnWrap{
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width:85px;
+  height: 85px;
+  background-color: $neonorange;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.hobbyBtnWrap:hover{
+  filter: drop-shadow(0 10px $neonpurple);
+  margin-top: -10px;
+}
 .climb{
   background-image: url('../../assets/dylanClimb.jpg');
   display: block;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
+
 }
 .ski{
   background-image: url('../../assets/dylanSki.jpg');
@@ -417,10 +432,10 @@
 
 @media (max-width: 800px) {
   .about{
-    padding-bottom: 0;
+    padding: 100px 10vw;
   }
   .hobbies{
-    padding-top:0;
+    padding: 100px 0;
   }
   .hobby{
     width: 75vw;
@@ -435,7 +450,7 @@
     margin-left: 7vw;
   }
   .skillPadding{
-    padding: 10vw;
+    padding: 30px 10vw;
   }
   .skillWrapper{
     width: auto;
@@ -455,6 +470,10 @@
     margin-top: 100px
   }
   .socialWrap{
+    height: 75px;
+    width: 75px;
+  }
+  .hobbyBtnWrap{
     height: 75px;
     width: 75px;
   }
@@ -481,7 +500,7 @@
   }
   .contact{
     box-sizing: border-box;
-    padding:0vh 10vw 10vh 10vw;
+    padding:15vh 10vw 15vh 10vw;
   }
   .hobbiesH2{
     margin: 0 10vw;

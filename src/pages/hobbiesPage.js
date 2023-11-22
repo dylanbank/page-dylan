@@ -76,11 +76,15 @@ export default function Hobbies(){
                 </div>
                 <div className="pairWrapper">
                     <div className='btnPair'>
-                        <div className="socialWrap" onClick={scrollLeft} style={current===0 ? {opacity: '0', cursor: 'auto'}: {}}>
-                            <div id='leftArrow' />
+                        <div style={{height: '95px', paddingTop: '10px'}}>
+                            <div className="hobbyBtnWrap" onClick={scrollLeft} style={current===0 ? {opacity: '0', cursor: 'auto', backgroundColor: '#fe5000'}: {backgroundColor: '#fe5000'}}>
+                                <div id='leftArrow' />
+                            </div>
                         </div>
-                        <div className="socialWrap" style={current===2 ? {opacity: '0', cursor: 'auto', marginLeft: '12vw'}: {marginLeft: '12vw'}} onClick={scrollRight} >
-                            <div id='rightArrow' />
+                        <div style={{height: '95px', paddingTop: '10px', marginLeft: '12vw'}}>
+                            <div className="socialWrap" style={current===2 ? {opacity: '0', cursor: 'auto'}: {}} onClick={scrollRight} >
+                                <div id='rightArrow' />
+                            </div>
                         </div>
                     </div>
                 </div>
