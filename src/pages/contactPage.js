@@ -67,15 +67,21 @@ export default function Contact(){
                     </div>
                 </form>
                 <div className="socials" >
-                    <a className="socialWrap" href={'https://www.linkedin.com/in/dylan-windebank-8a19a4194/'}>
-                        <div className="social" style={{backgroundImage: `url(${LI})`}} />
-                    </a>
-                    <a className="socialWrap" href={'https://github.com/dylanbank'}>
-                        <div className="social" style={{backgroundImage: `url(${GIT})`}} />
-                    </a>
-                    <a className="socialWrap" href={'https://twitter.com/dbanq_'}>    
-                        <div className="social" style={{backgroundImage: `url(${TWIT})`}} />
-                    </a>
+                    <div style={{height:'95px', paddingTop:'10px'}}>
+                        <a className="socialWrap" href={'https://www.linkedin.com/in/dylan-windebank-8a19a4194/'}>
+                            <div className="social" style={{backgroundImage: `url(${LI})`}} />
+                        </a>
+                    </div>
+                    <div style={{height:'95px', paddingTop:'10px'}}>
+                        <a className="socialWrap" href={'https://github.com/dylanbank'}>
+                            <div className="social" style={{backgroundImage: `url(${GIT})`}} />
+                        </a>
+                    </div>
+                    <div style={{height:'95px', paddingTop:'10px'}}>
+                        <a className="socialWrap" href={'https://twitter.com/dbanq_'}>    
+                            <div className="social" style={{backgroundImage: `url(${TWIT})`}} />
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -9,16 +9,10 @@ export default function Hobbies(){
         hobbyContainer.scrollLeft = (hobbyContainer.scrollWidth - hobbyContainer.clientWidth ) / 2;
 
         function handleResize() {
-        // Set window width/height to state
-        console.log("resize")
             hobbyContainer.scrollLeft = 0;
             setCurrent(0);
         }
-        // Add event listener
         window.addEventListener("resize", handleResize);
-        // Call handler right away so state gets updated with initial window size
-        handleResize();
-        // Remove event listener on cleanup
         return () => window.removeEventListener("resize", handleResize);
     }, [])
 
@@ -54,10 +48,7 @@ export default function Hobbies(){
         <div className="hobbies">
             <div className="hobbiesH2">
                 <h2>HOBBIES</h2>
-                <div>
-                    <button id='leftArrow' onClick={scrollLeft}>left arrow</button>
-                    <button id='rightArrow' onClick={scrollRight}>right arrow</button>
-                </div>
+                
             </div>
             <div>
                 <div id="hobbyContainer" >
@@ -81,6 +72,16 @@ export default function Hobbies(){
                         <a className='earningsBtn' href="https://liquipedia.net/rocketleague/Dbanq">
                             <div className="earningsIcon" />
                         </a>
+                    </div>
+                </div>
+                <div className="pairWrapper">
+                    <div className='btnPair'>
+                        <div className="socialWrap" onClick={scrollLeft} style={current===0 ? {opacity: '0', cursor: 'auto'}: {}}>
+                            <div id='leftArrow' />
+                        </div>
+                        <div className="socialWrap" style={current===2 ? {opacity: '0', cursor: 'auto', marginLeft: '12vw'}: {marginLeft: '12vw'}} onClick={scrollRight} >
+                            <div id='rightArrow' />
+                        </div>
                     </div>
                 </div>
             </div>
