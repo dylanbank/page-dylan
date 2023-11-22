@@ -346,6 +346,7 @@
   flex-shrink:0;
   border-radius: 25px;
   z-index: 20;
+
 }
 
 .hobby:hover{
@@ -362,6 +363,8 @@
   flex-shrink:0;
   padding:5vw;
   height: fit-content;
+  margin-right: -15vw;
+  z-index: 25;
 }
 .rightHobby{
   border-top-left-radius: 25px;
@@ -372,6 +375,8 @@
   flex-shrink:0;
   padding:5vw;
   height: fit-content;
+  margin-left: -15vw;
+  z-index: 25;
 }
 .earningsBtn{
   display: none;
@@ -416,6 +421,9 @@
   }
   .hobbies{
     padding-top:0;
+  }
+  .hobby{
+    width: 75vw;
   }
   .pairWrapper{
     margin-top: 30px;
