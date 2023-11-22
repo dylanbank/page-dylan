@@ -20,7 +20,7 @@
 }
 .skills{
   box-sizing: border-box;
-  height: 100vh;
+  height: 80vh;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -60,6 +60,7 @@
   animation: ellipsis steps(4,end) 1500ms infinite;
   content: "\2026"; /* ascii code for the ellipsis character */
   width: 0px;
+  text-indent: 0;
 }
 
 @keyframes ellipsis {
@@ -81,7 +82,6 @@
   margin: 0;
   margin-left: 4vw;
   cursor: pointer;
-  display: inline-block;
 }
 .skill:hover{
   background: rgba(112,23,252, 0.2);
@@ -103,6 +103,8 @@
 
 .closedBracket{
   margin-left: 4vw;
+  display: block;
+  text-indent:0;
 }
 .about{
   box-sizing: border-box;
@@ -380,6 +382,12 @@
 }
 
 @media (max-width: 800px) {
+  .about{
+    padding-bottom: 0;
+  }
+  .hobbies{
+    padding-top:0;
+  }
   .closedBracket{
     margin-left: 7vw;
   }

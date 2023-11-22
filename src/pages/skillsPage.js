@@ -57,9 +57,7 @@ export default function Skills(){
                 new ResizeObserver(entries => {
                     for (const entry of entries) {
                         const newSize = entry.contentRect;
-                        console.log('Div resized to:', newSize);
-                        var key = Object.keys(Skill)[index];
-                        console.log(key+'this is key');
+                        var key = Object.keys(Skill)[index]; 
                         switch(key){
                             case 'JS':
                                 setJSHeight(newSize.height)
@@ -135,12 +133,12 @@ export default function Skills(){
         },
         "AWS":{
             "name": 'aws',
-            'description': 'i have used s3, ec2, cloud watch, and lambda in a professional and personal use.',
+            'description': 'i have used s3, ec2, cloud watch, and lambda for professional and personal use.',
             'time': '2',
         },
         "NODE":{
             "name": 'node',
-            'description': 'i have utilized node to build multiple frontend and backend applications.',
+            'description': 'i have utilized node to build multiple frontend and backend applications, mostly paired with react.',
             'time': '2',
         },
 

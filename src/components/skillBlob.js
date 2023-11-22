@@ -3,11 +3,17 @@ import { useState, useEffect } from "react";
 export default function SkillBlob(){
 
   const [ ratio, setRatio ] = useState(window.innerWidth/1080)
-  const isMobile = window.innerWidth < 750;
+  const [ mobile, setMobile ] = useState(window.innerWidth<800)
+  
 
   useEffect(()=>{
     function handleResize(){
       setRatio(window.innerWidth/1080)
+      if(window.innerWidth<800){
+        setMobile(true);
+      }else{
+        setMobile(false);
+      }
     }
 
     window.addEventListener("resize", handleResize);
@@ -17,7 +23,7 @@ export default function SkillBlob(){
 
   return(
       <mesh
-      position={[0, 0, 0]} 
+      position={[0, mobile ? 2.5 : 0, 0]} 
       scale={1.3*ratio}
     >
       <Sphere visible args={[1, 100, 200]}>

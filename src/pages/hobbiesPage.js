@@ -8,12 +8,29 @@ export default function Hobbies(){
         const hobbyContainer = document.getElementById('hobbyContainer')
         hobbyContainer.scrollLeft = (hobbyContainer.scrollWidth - hobbyContainer.clientWidth ) / 2;
 
+        function handleResize() {
+        // Set window width/height to state
+        console.log("resize")
+            hobbyContainer.scrollLeft = 0;
+            setCurrent(0);
+        }
+        // Add event listener
+        window.addEventListener("resize", handleResize);
+        // Call handler right away so state gets updated with initial window size
+        handleResize();
+        // Remove event listener on cleanup
+        return () => window.removeEventListener("resize", handleResize);
     }, [])
 
     const scrollLeft = () => {
         const hobbyContainer = document.getElementById('hobbyContainer');
         console.log(hobbyContainer.scrollLeft);
-        hobbyContainer.scrollLeft -= hobbyContainer.scrollLeftMax/2;
+        if(current===1){
+            hobbyContainer.scrollLeft = 0;
+        }
+        else if(current===2){
+            hobbyContainer.scrollLeft = hobbyContainer.scrollLeftMax/2;
+        }
         if(current != 0){
             setCurrent(prevState => prevState-1);
         }
@@ -22,6 +39,12 @@ export default function Hobbies(){
         const hobbyContainer = document.getElementById('hobbyContainer');
         console.log(hobbyContainer);
         hobbyContainer.scrollLeft += hobbyContainer.scrollLeftMax/2;
+        if(current===0){
+            hobbyContainer.scrollLeft = hobbyContainer.scrollLeftMax/2;
+        }
+        else if(current===1){
+            hobbyContainer.scrollLeft = hobbyContainer.scrollLeftMax;
+        }
         if(current != 2){
             setCurrent(prevState => prevState+1);
         }
@@ -40,7 +63,7 @@ export default function Hobbies(){
                 <div id="hobbyContainer" >
                     <div className="leftHobby">
                         <p style={{display: 'block'}}>
-                            sending the white in the corner, this is what i do for something fun and physical.
+                            sending the v0 in the corner, this is what i do for something fun and physical.
                         </p>
                     </div>
                     <div className="hobby climb" style={current === 0 ?{webkitFilter: 'grayscale(0%)', mozFilter: 'grayscale(0%)', filter: 'grayscale(0%)'}: {}}/>

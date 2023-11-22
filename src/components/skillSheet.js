@@ -17,7 +17,7 @@ import GIT from '../assets/githubWLogo.png';
 export default function SkillSheet({ ...props}) {
   const [ selectedTexture , setSelectedTexture] = useState(null);
   const [ ratio, setRatio ] = useState(window.innerWidth/1080);
-  const [ mobile, setMobile ] = useState(window.innerWidth < 750)
+  const [ mobile, setMobile ] = useState(window.innerWidth < 800)
   useEffect(()=> {
     setSelectedTexture(texture[props.selected]);
     console.log(props.selected)
@@ -54,9 +54,9 @@ export default function SkillSheet({ ...props}) {
   return (
     <>
       <mesh
-        position={[0.5 * ratio, 0, mobile ? -2.5 : 3]}
-        scale={ 0.35*ratio}
-        rotation={[-Math.PI/8, 0, -Math.PI/16]}
+        position={[mobile ? 0 : 0.5 * ratio, mobile ? 4:0, mobile ? -2.5 : 3]}
+        scale={ mobile ? 1.8*ratio : 0.35*ratio}
+        rotation={[mobile ? 0 :-Math.PI/8, 0, mobile ? 0 : -Math.PI/16]}
       >
         { selectedTexture && 
           <Plane args={[2,2]} visible>
