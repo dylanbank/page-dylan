@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
 }
 .skills{
   box-sizing: border-box;
@@ -109,9 +110,10 @@
 }
 .about{
   box-sizing: border-box;
-  height: 100vh;
+  height: 80vh;
   padding:20vh 15vw 20vh 15vw;
   gap: 10vw;
+  position: relative;
 }
 .contact{
   box-sizing: border-box;
@@ -179,20 +181,46 @@
   height: 40px;
 }
 .infoCon{
-  background: $navyPurple;
-  //border: 3px solid $neonpurple;
   border-radius: 5px;
-  
+  width: 40%;
 
 }
 .about-image {
   background-image: url("../../assets/coloradoMe2.jpg");
-  height: 100%;
-  width: 30vw;
+  height: 30vw;
+  width: 40vw;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  border-radius: 8px;
+  border-bottom-left-radius: 300px;
+  border-top-left-radius: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 20;
+}
+.about-block1{
+  height: 33vw;
+  width: 43vw;
+  border-bottom-left-radius: 300px;
+  border-top-left-radius: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $neonorange;
+  z-index: 15;
+}
+.about-block2{
+  height: 38vw;
+  width: 36vw;
+  border-bottom-left-radius: 300px;
+  border-top-left-radius: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $neonpurple;
+  z-index: 16;
+  opacity: 0.4;
 }
 .heroPic{
   height: 35vh;
@@ -206,8 +234,11 @@
   box-shadow: 0 0px 90px $lightNP;
 }
 .header {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20vh 15vw 20vh 15vw;
 }
 .nav{
   display: flex;
@@ -434,6 +465,22 @@
   .about{
     padding: 100px 10vw;
   }
+  .infoCon{
+    width: 100%;
+    margin-top: 400px
+  }
+  .about-image{
+    height: 55%;
+    width: 75vw;
+  }
+  .about-block2{
+    height: 70%;
+    width: 68%;
+  }
+  .about-block1{
+    height: 62%;
+    width: 85%;
+  }
   .hobbies{
     padding: 100px 0;
   }
@@ -488,15 +535,6 @@
   .formField{
     margin-top: 2vh;
     width: 100%;
-  }
-  .about-image {
-    background-image: url("../../assets/coloradoMe2.jpg");
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    border-radius: 8px;
   }
   .contact{
     box-sizing: border-box;

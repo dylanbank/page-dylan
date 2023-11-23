@@ -46,13 +46,19 @@ export default function Skills(){
             'description': 'i learned fundamental programming knowledge and concepts through this language during my undergrad.',
             'time': '3',
         },
+        "REACT":{
+            "name": 'react',
+            'description': 'mostly paired with node, i have built upon and constructed production web apps using this framwork.',
+            'favorite': 'true',
+            'time': '2',
+        },
         "HTML":{
             "name": 'html',
             'description': 'from custom widgets to building out full websites and apps, i am confident in this markup language',
             'time': '3',
         },
         "CSS":{
-            "name": 'css',
+            "name": 'scss',
             'description': 'designed and catered visions to clients',
             'time': '2',
         },
@@ -63,7 +69,7 @@ export default function Skills(){
         },
         "NODE":{
             "name": 'node',
-            'description': 'i have utilized node to build multiple frontend and backend applications, mostly paired with react.',
+            'description': 'i have utilized node to build multiple backend applications, mostly paired with react.',
             'time': '2',
         },
 

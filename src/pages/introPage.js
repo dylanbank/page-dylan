@@ -8,8 +8,11 @@ export default function Intro(props){
             <div className="header flex">
                 <div className="heroPic" />
             <div>
-                <h1>Hello! <br/> My name is <br/>Dylan Windebank,</h1>
-                <div className="wrapper">
+                <div >
+                    <h2>a webdeveloper</h2>
+                </div>
+                <div className="wrapper" style={{display: 'none'}}>
+                
                 <h3>and i'm a web developer that </h3>
                 <div className="words">
                     <span><h3 className="p-front"> &nbsp;competes.</h3></span>
