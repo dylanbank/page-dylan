@@ -17,11 +17,16 @@ import GIT from '../assets/githubWLogo.png';
 export default function SkillSheet({ ...props}) {
   const [ selectedTexture , setSelectedTexture] = useState(null);
   const [ ratio, setRatio ] = useState(window.innerWidth/1080);
-  const [ mobile, setMobile ] = useState(window.innerWidth < 800)
+  const [ mobile, setMobile ] = useState(window.innerWidth < 800);
+  const [height, setHeight ] = useState(0.9);
   useEffect(()=> {
     setSelectedTexture(texture[props.selected]);
-    console.log(props.selected)
-    console.log(selectedTexture)
+    if(Object.keys(texture).indexOf(props.selected) < (Object.keys(texture).length-1)/2){
+      setHeight(-0.4);
+    }else{
+      setHeight(0.4);
+    }
+    
   }, [props.selected]);
   
   useEffect(()=>{
@@ -39,22 +44,19 @@ export default function SkillSheet({ ...props}) {
   const texture = {
       JS: useLoader(TextureLoader, JS),
       PY: useLoader(TextureLoader, PY),
-      CPP: useLoader(TextureLoader, CPP),
       SQL: useLoader(TextureLoader, SQL),
-      CSS: useLoader(TextureLoader, CSS),
-      HTML: useLoader(TextureLoader, HTML),
-      AWS: useLoader(TextureLoader, AWS),
+      CPP: useLoader(TextureLoader, CPP),
       REACT: useLoader(TextureLoader, REACT),
+      HTML: useLoader(TextureLoader, HTML),
+      CSS: useLoader(TextureLoader, CSS),
+      AWS: useLoader(TextureLoader, AWS),
       NODE: useLoader(TextureLoader, NODE),
-      THREE: useLoader(TextureLoader, THREE),
-      GIT: useLoader(TextureLoader, GIT),
   };
-
 
   return (
     <>
       <mesh
-        position={[mobile ? 0.3 : 0.5 * ratio, mobile ? -0.9:0, mobile ? 3 : 3]}
+        position={[mobile ? 0.3 : 0.5 * ratio, mobile ? height : 0, mobile ? 3 : 3]}
         scale={ mobile ? 0.7 *ratio: 0.35*ratio}
         rotation={[-Math.PI/16, 0, mobile ? 0 : -Math.PI/16]}
       >
