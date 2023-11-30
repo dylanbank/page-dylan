@@ -497,13 +497,16 @@
     margin-left: 7vw;
   }
   .skillPadding{
-    padding: 30px 10vw;
+    padding: 30px 0vw;
   }
   .skillWrapper{
     width: auto;
-    padding: 7vw;
+    padding: 7vw 0;
     margin-top: 0px;
+    margin-left: 10vw;
+    margin-right: 10vw;
     background-color: rgba(0,0,0,0);
+    backdrop-filter: blur(0px);
   }
   .skillRender{
     //display: none;
@@ -511,6 +514,8 @@
   .nestedSub{
     margin-left: 7vw;
     padding-left: 7vw;
+    backdrop-filter: blur(15px);
+    background-color: rgba(0,0,0,0.8);
   }
   .socials{
     flex-direction: row;
