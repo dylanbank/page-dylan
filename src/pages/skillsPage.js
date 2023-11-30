@@ -7,7 +7,7 @@ import SkillBlob from '../components/skillBlob';
 
 export default function Skills(){
     const [selectedText, setSelectedText] = useState("JS");
-    const isMobile = window.innerWidth < 750;
+    const [mobile, setMobile] = useState(window.innerWidth < 750);
     const cameraControlRef = useRef(null);
     const nestedRef = useRef(null);
     const [open, setOpen] = useState(false);
@@ -22,6 +22,15 @@ export default function Skills(){
         }
     }
 
+    useEffect(()=>{
+        function handleResize(){
+          setMobile(window.innerWidth < 800);
+        }
+    
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return () => window.removeEventListener("resize", handleResize);
+      }, [])
 
     
     const Skill = {
@@ -78,45 +87,76 @@ export default function Skills(){
     
     return(
         <div className='skillPadding'>
-            <div className="skills flex">
-                <div className='skillRender'>
-                    <Canvas style={{width:'100%', height:'100%', top:'0', left:'0', position:'absolute', zIndex:'15'}}> 
-                        <pointLight color="#ffffff" position={[0, 0, 10]} intensity={0.1}/>
-                        <pointLight color="#ffffff" position={[0, 0, -10]} intensity={0.1}/>
-                        <pointLight color="#ffffff" position={[-10, 0, 0]} intensity={0.1}/>
-                        <pointLight color="#ffffff" position={[10, 0, 0]} intensity={0.1}/>
-                        <pointLight color="#ffffff" position={[10, 0, 10]} intensity={0.3}/>
-                        <pointLight color="#ffffff" position={[-10, 0, -10]} intensity={0.3}/>
-                        <pointLight color="#ffffff" position={[-10, 0, 10]} intensity={0.3}/>
-                        <pointLight color="#ffffff" position={[10, 0, -10]} intensity={0.3}/>
-                        <pointLight color="#ffffff" position={[0, 10, 0]} intensity={0.8}/>
-                        <pointLight color="#ffffff" position={[0, -10, 0]} intensity={0.8}/>
-                        <group>
-                            
-                                <SkillSheet selected={selectedText} cameraControlRef/>
-                        </group>
-                        <CameraControls dollyToCursor={true} minDistance={5} maxDistance={5} ref={cameraControlRef} maxPolarAngle={Math.PI /2} minPolarAngle={Math.PI/2} zoom={false}/>
-                    </Canvas>
-                    <Canvas style={{width:'100%', height:'100%', top:'0', left:'0', position:'absolute', zIndex:'10'}}> 
-                        <pointLight color="#ffffff" position={[0, 0, 10]} intensity={0.1}/>
-                        <pointLight color="#ffffff" position={[0, 0, -10]} intensity={0.1}/>
-                        <pointLight color="#ffffff" position={[-10, 0, 0]} intensity={0.1}/>
-                        <pointLight color="#ffffff" position={[10, 0, 0]} intensity={0.1}/>
-                        <pointLight color="#ffffff" position={[10, 0, 10]} intensity={0.3}/>
-                        <pointLight color="#ffffff" position={[-10, 0, -10]} intensity={0.3}/>
-                        <pointLight color="#ffffff" position={[-10, 0, 10]} intensity={0.3}/>
-                        <pointLight color="#ffffff" position={[10, 0, -10]} intensity={0.3}/>
-                        <pointLight color="#ffffff" position={[0, 10, 0]} intensity={0.8}/>
-                        <pointLight color="#ffffff" position={[0, -10, 0]} intensity={0.8}/>
-                        <group>
-                            
-                                <SkillBlob  cameraControlRef/>
-                        </group>
-                    </Canvas>
-                    
-                </div>
+            <div className={`skills ${!mobile ? 'flex' : ''}`}>
+                { !mobile &&
+                    <div className='skillRender' >
+                        <Canvas style={{width:'100%', height:'100%', top:'0', left:'0', position:'absolute', zIndex:'15'}}> 
+                            <pointLight color="#ffffff" position={[0, 0, 10]} intensity={0.1}/>
+                            <pointLight color="#ffffff" position={[0, 0, -10]} intensity={0.1}/>
+                            <pointLight color="#ffffff" position={[-10, 0, 0]} intensity={0.1}/>
+                            <pointLight color="#ffffff" position={[10, 0, 0]} intensity={0.1}/>
+                            <pointLight color="#ffffff" position={[10, 0, 10]} intensity={0.3}/>
+                            <pointLight color="#ffffff" position={[-10, 0, -10]} intensity={0.3}/>
+                            <pointLight color="#ffffff" position={[-10, 0, 10]} intensity={0.3}/>
+                            <pointLight color="#ffffff" position={[10, 0, -10]} intensity={0.3}/>
+                            <pointLight color="#ffffff" position={[0, 10, 0]} intensity={0.8}/>
+                            <pointLight color="#ffffff" position={[0, -10, 0]} intensity={0.8}/>
+                            <group>
+                                
+                                    <SkillSheet selected={selectedText} cameraControlRef/>
+                            </group>
+                            <CameraControls dollyToCursor={true} minDistance={5} maxDistance={5} ref={cameraControlRef} maxPolarAngle={Math.PI /2} minPolarAngle={Math.PI/2} zoom={false}/>
+                        </Canvas>
+                        <Canvas style={{width:'100%', height:'100%', top:'0', left:'0', position:'absolute', zIndex:'10'}}> 
+                            <pointLight color="#ffffff" position={[0, 0, 10]} intensity={0.1}/>
+                            <pointLight color="#ffffff" position={[0, 0, -10]} intensity={0.1}/>
+                            <pointLight color="#ffffff" position={[-10, 0, 0]} intensity={0.1}/>
+                            <pointLight color="#ffffff" position={[10, 0, 0]} intensity={0.1}/>
+                            <pointLight color="#ffffff" position={[10, 0, 10]} intensity={0.3}/>
+                            <pointLight color="#ffffff" position={[-10, 0, -10]} intensity={0.3}/>
+                            <pointLight color="#ffffff" position={[-10, 0, 10]} intensity={0.3}/>
+                            <pointLight color="#ffffff" position={[10, 0, -10]} intensity={0.3}/>
+                            <pointLight color="#ffffff" position={[0, 10, 0]} intensity={0.8}/>
+                            <pointLight color="#ffffff" position={[0, -10, 0]} intensity={0.8}/>
+                            <group>
+                                
+                                    <SkillBlob  cameraControlRef/>
+                            </group>
+                        </Canvas>
+                        
+                    </div>
+                }
                 <div style={{position:'absolute', width:'100%', height:'100%', zIndex: "20", display: 'flex', flexDirection:'column', justifyContent:'center', alignItems:'flexStart'}}>
-                    <h2>SKILLS:</h2>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <h2 style={{marginTop: "20px"}}>SKILLS</h2>
+                        { mobile &&
+                        <div style={{position: 'relative', width: '150px', height: '100px'}}>
+                            <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: '20'}}>
+
+                            </div>
+                            <Canvas style={ mobile ? {width:'100%', height:'100%', top:'0', left:'0', position:'relative', zIndex:'15'} : {width:'100%', height:'100%', top:'0', left:'0', position:'absolute', zIndex:'15'}}> 
+                                <pointLight color="#ffffff" position={[0, 0, 10]} intensity={0.1}/>
+                                <pointLight color="#ffffff" position={[0, 0, -10]} intensity={0.1}/>
+                                <pointLight color="#ffffff" position={[-10, 0, 0]} intensity={0.1}/>
+                                <pointLight color="#ffffff" position={[10, 0, 0]} intensity={0.1}/>
+                                <pointLight color="#ffffff" position={[10, 0, 10]} intensity={0.3}/>
+                                <pointLight color="#ffffff" position={[-10, 0, -10]} intensity={0.3}/>
+                                <pointLight color="#ffffff" position={[-10, 0, 10]} intensity={0.3}/>
+                                <pointLight color="#ffffff" position={[10, 0, -10]} intensity={0.3}/>
+                                <pointLight color="#ffffff" position={[0, 10, 0]} intensity={0.8}/>
+                                <pointLight color="#ffffff" position={[0, -10, 0]} intensity={0.8}/>
+                                <group>
+                                    
+                                        <SkillSheet selected={selectedText} cameraControlRef/>
+                                </group>
+                                <CameraControls dollyToCursor={true} minDistance={3} maxDistance={3} ref={cameraControlRef} maxPolarAngle={Math.PI /2} minPolarAngle={Math.PI/2} zoom={false}/>
+                            </Canvas>
+                            
+                        </div>
+                        }
+                    </div>
+                    
+                    
                     <div className="skillWrapper" >
                             <p > &#123; </p> 
                             <div className='nested' ref={nestedRef}>
