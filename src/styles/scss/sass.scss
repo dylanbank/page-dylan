@@ -514,8 +514,7 @@
   .nestedSub{
     margin-left: 7vw;
     padding-left: 7vw;
-    backdrop-filter: blur(15px);
-    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(0);
   }
   .socials{
     flex-direction: row;

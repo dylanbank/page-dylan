@@ -54,9 +54,9 @@ export default function SkillSheet({ ...props}) {
   return (
     <>
       <mesh
-        position={[mobile ? 0 : 0.5 * ratio, mobile ? 0:0, mobile ? 3 : 3]}
-        scale={ mobile ? 1 *ratio: 0.35*ratio}
-        rotation={[-Math.PI/16, 0, mobile ? -Math.PI/16 : -Math.PI/16]}
+        position={[mobile ? 0.3 : 0.5 * ratio, mobile ? -0.9:0, mobile ? 3 : 3]}
+        scale={ mobile ? 0.7 *ratio: 0.35*ratio}
+        rotation={[-Math.PI/16, 0, mobile ? 0 : -Math.PI/16]}
       >
         { selectedTexture && 
           <Plane args={[2,2]} visible>
