@@ -567,10 +567,7 @@
     backdrop-filter: blur(0);
   }
   .socials{
-    flex-direction: row;
-    width: 100%;
-    margin-left: 0px;
-    margin-top: 50px
+    display: none;
   }
   .socialWrap{
     height: 75px;
