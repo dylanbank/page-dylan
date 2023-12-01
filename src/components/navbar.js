@@ -4,7 +4,7 @@ import TWIT from "../assets/twitter.png"
 import LI from '../assets/linkedin.png'
 
 export default function Navbar(props){
-    const [mobile, setMobile] = useState(false);
+    const [mobile, setMobile] = useState(window.innerWidth < 800);
     const [open, setOpen] = useState(true);
     const [isTop, setIsTop] = useState(true);
     const [current, setCurrent] = useState({
@@ -13,15 +13,6 @@ export default function Navbar(props){
         hobbies:false,
         contact:false
     });
-
-    const checkTop = () => {
-        if (window.scrollY) {
-            setIsTop(false);
-        } else {
-            setCurrent({about:false,skills:false,hobbies:false,contact:false});
-            setIsTop(true);
-        }
-    };
 
     const selectCurrent = (selection) => {
         switch(selection){
@@ -37,6 +28,8 @@ export default function Navbar(props){
             case 4:
                 setCurrent({about:false,skills:false,hobbies:false,contact:true,});
                 break;
+            default:
+                
         }
     }
 
@@ -44,11 +37,19 @@ export default function Navbar(props){
         
         function handleResize(){
             window.innerWidth > 800 && setOpen(false); 
-            setMobile(window.innerWidth < 800);
+            setMobile(window.innerWidth < 810);
+        }
+        function checkTop(){
+            if (window.scrollY) {
+                setIsTop(false);
+            } else {
+                setCurrent({about:false,skills:false,hobbies:false,contact:false});
+                setIsTop(true);
+            }
         }
         window.addEventListener("resize", handleResize);
         window.addEventListener('scroll', checkTop);
-        handleResize();
+        checkTop();
         return () => {
             window.removeEventListener('scroll', checkTop);
             window.removeEventListener("resize", handleResize);
@@ -65,7 +66,7 @@ export default function Navbar(props){
                 <div style={{ gap: '30px', display: 'flex'}}>
                     <div className="navText" onClick={()=>{selectCurrent(1); props.homeProps.ScrollToView('about')}}>
                         <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.about ? "nav-selected" : ""}`}>
-                            <h3>ABOUT ME</h3>
+                            <h3>ABOUT</h3>
                         </div>
                     </div>
                     <div className="navText" onClick={()=>{selectCurrent(2); props.homeProps.ScrollToView('skills')}}>
@@ -101,7 +102,7 @@ export default function Navbar(props){
                     </div>
                     <div style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
                         <div className="navText" style={{ alignItems: 'normal'}} onClick={()=>{selectCurrent(1); props.homeProps.ScrollToView('about'); setOpen(false)}}>
-                            <h3>ABOUT ME</h3>
+                            <h3>ABOUT</h3>
                         </div>
                         <div className="navText" style={{ alignItems: 'normal'}} onClick={()=>{selectCurrent(2); props.homeProps.ScrollToView('skills'); setOpen(false)}}>
                             
@@ -121,7 +122,7 @@ export default function Navbar(props){
                 </div>
                 <div className="socials" style={{width: '', gap: '10px'}}>
                         <div style={{height:'95px', paddingTop:'10px'}}>
-                            <a className="socialWrap" href={'https://www.linkedin.com/in/dylan-windebank-8a19a4194/'}>
+                            <a className="socialWrap" href={'https://www.linkedin.com/in/dylan-windebank'}>
                                 <div className="social" style={{backgroundImage: `url(${LI})`}} />
                             </a>
                         </div>

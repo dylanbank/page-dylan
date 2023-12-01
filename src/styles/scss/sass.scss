@@ -8,7 +8,7 @@
   background-size: cover;
   
 }
-.hero{
+.intro{
   height: 100vh;
   background-image: url('../../assets/dylanpageHero.png');
   background-size: cover;
@@ -18,6 +18,24 @@
   flex-direction: column;
   justify-content: center;
   
+}
+#introBlock1{
+  width: 40%;
+  
+  background-color: $lightNP;
+}
+#introBlock2{
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-color: black;
+  padding: 0 0 30px 30px;
+}
+#introBlock3{
+  width: 100%;
+  height: 25%;
+  background-color: $neonpurple;
 }
 .skills{
   box-sizing: border-box;
@@ -41,7 +59,7 @@
   background-color: black;
 }
 .nested{
-  border-left: 1px solid $neonorange;
+  border-left: 1px solid $lightNP;
   overflow:hidden;
   //transition: max-height 1s;
   margin: 0px;
@@ -110,14 +128,16 @@
 }
 .about{
   box-sizing: border-box;
-  
+  background-color: $neonpurple;
   padding:20vh 15vw 20vh 15vw;
   gap: 10vw;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .contact{
   box-sizing: border-box;
-  padding:20vh 15vw 30vh 15vw;
+  padding:20vh 15vw 20vh 15vw;
 }
 
 .sendMobileButton {
@@ -128,7 +148,7 @@
   display: flex; 
   justify-content: center; 
   align-items: center; 
-  background-color: $neonorange; 
+  background-color: $neonpurple; 
   border-radius: 8px;
   position: absolute;
   cursor: pointer;
@@ -170,7 +190,7 @@
   transition: all 0.3s;
 }
 .socialWrap:hover{
-  filter: drop-shadow(0 10px $neonorange);
+  filter: drop-shadow(0 10px black);
   margin-top: -10px;
 }
 
@@ -183,64 +203,29 @@
 }
 .infoCon{
   border-radius: 5px;
-  width: 40%;
+  width: 50%;
 
 }
-.about-image {
-  background-image: url("../../assets/coloradoMe2.jpg");
-  height: 30vw;
-  width: 40vw;
-  background-size: cover;
-  background-position: center center;
+#about-image {
+  --b: 5px; /* border thickness */
+  --c: #0000 25%, black 0; /* define the color here */
+  padding: 30px;
+  background:
+    conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--c)) 0    0,
+    conic-gradient(from 180deg at top    var(--b) right var(--b),var(--c)) 100% 0,
+    conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--c)) 0    100%,
+    conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--c)) 100% 100%;
+  background-size: 50px 50px; /* adjust border length here */
   background-repeat: no-repeat;
-  border-bottom-left-radius: 300px;
-  border-top-left-radius: 50px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  transition: .6s;
+  width: 25vw;
+  height: 25vw;
   z-index: 20;
 }
-.about-block1{
-  height: 33vw;
-  width: 43vw;
-  border-bottom-left-radius: 300px;
-  border-top-left-radius: 90px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: $neonorange;
-  z-index: 15;
+#about-image:hover{
+  background-size: 51% 51%;
 }
-.about-block2{
-  height: 38vw;
-  width: 36vw;
-  border-bottom-left-radius: 300px;
-  border-top-left-radius: 50px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: $neonpurple;
-  z-index: 16;
-  opacity: 0.4;
-}
-.heroPic{
-  height: 35vh;
-  width: 35vh;
-  border-radius: 8px;
-  background-image: url('../../assets/coloradoMe.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  margin-right: 4vw;
-  box-shadow: 0 0px 90px $lightNP;
-}
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20vh 15vw 20vh 15vw;
-}
+
 .nav{
   display: flex;
   align-items: center;
@@ -317,7 +302,7 @@
 }
 .navbar-not-top{
   background-color: black;
-  border-bottom: 1px solid white;
+  
 }
 .nav-text-con{
   padding: 1vh 2vw;
@@ -354,13 +339,7 @@
 .justify-between{
   justify-content: space-between;
 }
-.justify-center{
-  justify-content: center;
-}
-.words {
-  text-align: left;
-  overflow: hidden;
-}
+
 .formField{
   margin-top: 2vh;
   flex-grow: 0.5;
@@ -383,6 +362,7 @@
 .hobbies{
   padding: 20vh 0 20vh 0;
   box-sizing: border-box;
+  background-color: $lightNP;
 }
 #hobbyContainer{
   display: flex;
@@ -427,7 +407,7 @@
 }
 .hobby{
   background-size: cover;
-  background-position: left;
+  background-position: center center;
   background-repeat: no-repeat;
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
@@ -450,7 +430,7 @@
 .leftHobby{
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  background-color: $neonpurple;
+  background-color: black;
   width: 50vw;
   position: relative;
   flex-shrink:0;
@@ -462,7 +442,7 @@
 .rightHobby{
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
-  background-color: $neonorange;
+  background-color: black;
   width: 50vw;
   position: relative;
   flex-shrink:0;
@@ -521,25 +501,34 @@
   background-image: url('../../assets/dylanGame.jpg');
   display: block;
 }
-
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .about{
-    padding: 100px 10vw;
+    flex-direction: column-reverse;
   }
   .infoCon{
     width: 100%;
-    margin-top: 400px
   }
+}
+@media (max-width: 800px) {
+  #about-image{
+    width: 250px;
+    height: 250px;
+  }
+  .about{
+    padding: 100px 10vw;
+    
+  }
+  
   .about-image{
-    height: 55%;
+    height: 45%;
     width: 75vw;
   }
   .about-block2{
-    height: 70%;
+    height: 55%;
     width: 68%;
   }
   .about-block1{
-    height: 62%;
+    height: 50%;
     width: 85%;
   }
   .hobbies{
@@ -547,6 +536,7 @@
   }
   .hobby{
     width: 75vw;
+    background-position: left;
   }
   .pairWrapper{
     margin-top: 30px;

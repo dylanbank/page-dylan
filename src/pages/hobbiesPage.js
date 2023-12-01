@@ -18,20 +18,18 @@ export default function Hobbies(){
 
     const scrollLeft = () => {
         const hobbyContainer = document.getElementById('hobbyContainer');
-        console.log(hobbyContainer.scrollLeft);
         if(current===1){
             hobbyContainer.scrollLeft = 0;
         }
         else if(current===2){
             hobbyContainer.scrollLeft = hobbyContainer.scrollLeftMax/2;
         }
-        if(current != 0){
+        if(current !== 0){
             setCurrent(prevState => prevState-1);
         }
     }
     const scrollRight = () => {
         const hobbyContainer = document.getElementById('hobbyContainer');
-        console.log(hobbyContainer);
         hobbyContainer.scrollLeft += hobbyContainer.scrollLeftMax/2;
         if(current===0){
             hobbyContainer.scrollLeft = hobbyContainer.scrollLeftMax/2;
@@ -39,7 +37,7 @@ export default function Hobbies(){
         else if(current===1){
             hobbyContainer.scrollLeft = hobbyContainer.scrollLeftMax;
         }
-        if(current != 2){
+        if(current !== 2){
             setCurrent(prevState => prevState+1);
         }
     }
@@ -77,7 +75,7 @@ export default function Hobbies(){
                 <div className="pairWrapper">
                     <div className='btnPair'>
                         <div style={{height: '95px', paddingTop: '10px'}}>
-                            <div className="hobbyBtnWrap" onClick={scrollLeft} style={current===0 ? {opacity: '0', cursor: 'auto', backgroundColor: '#fe5000'}: {backgroundColor: '#fe5000'}}>
+                            <div className="socialWrap" onClick={scrollLeft} style={current===0 ? {opacity: '0', cursor: 'auto'}: {}}>
                                 <div id='leftArrow' />
                             </div>
                         </div>

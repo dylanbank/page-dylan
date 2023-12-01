@@ -1,7 +1,6 @@
-import { Suspense, useEffect, useState, useRef } from 'react';
-import { Canvas, useThree, useFrame, useLoader } from '@react-three/fiber'
-import { TextureLoader } from "three/src/loaders/TextureLoader";
-import { CameraControls, OrbitControls } from '@react-three/drei';
+import { useEffect, useState, useRef } from 'react';
+import { Canvas } from '@react-three/fiber'
+import { CameraControls } from '@react-three/drei';
 import SkillSheet from "../components/skillSheet"
 import SkillBlob from '../components/skillBlob';
 
@@ -10,13 +9,9 @@ export default function Skills(){
     const [mobile, setMobile] = useState(window.innerWidth < 750);
     const cameraControlRef = useRef(null);
     const nestedRef = useRef(null);
-    const [open, setOpen] = useState(false);
-    const Expand = () => {
-        setOpen(!open);
-        
-    }
+    
     const HandleChange = (newSkill) => {
-        if(selectedText!=newSkill){
+        if(selectedText!==newSkill){
             cameraControlRef.current?.rotate(mobile ? Math.PI : -Math.PI, 0, true);
             setTimeout(()=> {setSelectedText(newSkill); cameraControlRef.current?.rotate(mobile ? -Math.PI : Math.PI, 0, true);}, 300);
         }

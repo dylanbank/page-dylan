@@ -8,7 +8,6 @@ export default function Contact(){
     const [ info, setInfo ] = useState({email: null, name: null, subject: null, content: null});
     const [ sent, setSent] = useState(false);
     const [ visibleBtn, setVisibleBtn ] = useState(true);
-    const isMobile = window.innerWidth < 1500;
     const form = useRef();
 
     const HandleSubmit = (e) => {
@@ -68,7 +67,7 @@ export default function Contact(){
                 </form>
                 <div className="socials" >
                     <div style={{height:'95px', paddingTop:'10px'}}>
-                        <a className="socialWrap" href={'https://www.linkedin.com/in/dylan-windebank-8a19a4194/'}>
+                        <a className="socialWrap" href={'https://www.linkedin.com/in/dylan-windebank'}>
                             <div className="social" style={{backgroundImage: `url(${LI})`}} />
                         </a>
                     </div>
