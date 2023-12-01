@@ -12,8 +12,8 @@ export default function Skills(){
     
     const HandleChange = (newSkill) => {
         if(selectedText!==newSkill){
-            cameraControlRef.current?.rotate(mobile ? Math.PI : -Math.PI, 0, true);
-            setTimeout(()=> {setSelectedText(newSkill); cameraControlRef.current?.rotate(mobile ? -Math.PI : Math.PI, 0, true);}, 300);
+            cameraControlRef.current?.rotate( -Math.PI, 0, true);
+            setTimeout(()=> {setSelectedText(newSkill); cameraControlRef.current?.rotate( Math.PI, 0, true);}, 300);
         }
     }
 
