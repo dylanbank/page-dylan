@@ -134,6 +134,7 @@
   cursor: pointer;
   transition: left 1s, opacity 1s;
   margin-left: -75px;
+  z-index: 40;
 }
 .sendMobileButton:before {
   content: '';
@@ -420,7 +421,7 @@
 .pairWrapper{
   display: flex;
   justify-content:center;
-  margin-top: -100px;
+  margin-top: -95px;
   z-index: 30;
   position: relative;
 }

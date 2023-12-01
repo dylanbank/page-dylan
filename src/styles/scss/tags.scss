@@ -17,6 +17,8 @@ h2{
     text-align: left;
     margin: 0px;
     transform: scale(1, 0.7);
+    position: relative;
+    z-index: 30;
 }
 h3{
     font-family: 'Righteous', cursive;
@@ -46,6 +48,8 @@ p {
     text-align: left;
     margin: 0px;
     text-indent: 1.2rem;
+    position: relative;
+    z-index: 30;
 }
 label{
     display: block;

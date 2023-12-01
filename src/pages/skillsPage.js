@@ -142,7 +142,7 @@ export default function Skills(){
                                         {selectedText===key ? '' : <p className='loading'> &#125; </p>}
                                         
                                         <div className='nested nestedSub' style={ selectedText === key ? {maxHeight:'100px'} : {maxHeight: '0'}}> 
-                                            <div style={{paddingLeft: '1.5em', textIndent: '-1.5em', display:'inline-block'}}>
+                                            <div style={{paddingLeft: '1.5em', textIndent: '-1.5em'}}>
                                                 <p className='description'>"description"</p>
                                                 <p>&nbsp;&nbsp;:&nbsp;&nbsp;</p>
                                                 <p style={{color:'#b8d8be'}}>"{Skill[key].description}"</p>
