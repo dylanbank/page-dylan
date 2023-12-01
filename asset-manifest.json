@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/page-dylan/static/css/main.baf05d88.css",
-    "main.js": "/page-dylan/static/js/main.07b37849.js",
+    "main.css": "/page-dylan/static/css/main.84f070c5.css",
+    "main.js": "/page-dylan/static/js/main.512b4ee4.js",
     "static/media/dylanClimb.jpg": "/page-dylan/static/media/dylanClimb.0711e69b4a7500163388.jpg",
     "static/media/dylanSki.jpg": "/page-dylan/static/media/dylanSki.5c29ff1c9b97fcee6ba8.jpg",
     "static/media/coloradoMe.jpg": "/page-dylan/static/media/coloradoMe.a871f0933b9308925b90.jpg",
@@ -24,11 +24,11 @@
     "static/media/xmark-solid.svg": "/page-dylan/static/media/xmark-solid.2e040518dbf29b3936aa.svg",
     "static/media/arrow-right-solid.svg": "/page-dylan/static/media/arrow-right-solid.9d3b79ab01ebfb293292.svg",
     "static/media/arrow-left-solid.svg": "/page-dylan/static/media/arrow-left-solid.23832cab5a91ee880f4f.svg",
-    "main.baf05d88.css.map": "/page-dylan/static/css/main.baf05d88.css.map",
-    "main.07b37849.js.map": "/page-dylan/static/js/main.07b37849.js.map"
+    "main.84f070c5.css.map": "/page-dylan/static/css/main.84f070c5.css.map",
+    "main.512b4ee4.js.map": "/page-dylan/static/js/main.512b4ee4.js.map"
   },
   "entrypoints": [
-    "static/css/main.baf05d88.css",
-    "static/js/main.07b37849.js"
+    "static/css/main.84f070c5.css",
+    "static/js/main.512b4ee4.js"
   ]
 }
