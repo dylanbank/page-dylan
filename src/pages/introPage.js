@@ -10,7 +10,7 @@ export default function Intro(props){
                 <div id="introBlock2">
                     <div >
                         <h1> i'm a webdeveloper.<br/>
-                        i care about <br/>
+                        i value <br/>
                         creativity + efficiency.</h1>
                     </div>
                 </div>
