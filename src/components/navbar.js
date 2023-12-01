@@ -5,7 +5,7 @@ import LI from '../assets/linkedin.png'
 
 export default function Navbar(props){
     const [mobile, setMobile] = useState(window.innerWidth < 800);
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     const [isTop, setIsTop] = useState(true);
     const [current, setCurrent] = useState({
         about:false,
