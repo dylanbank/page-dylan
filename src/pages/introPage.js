@@ -9,7 +9,7 @@ export default function Intro(props){
                 <div id="introBlock1" />
                 <div id="introBlock2">
                     <div >
-                        <h1>a webdeveloper.<br/>
+                        <h1>a webdeveloper<br/>
                         that values <br/>
                         creativity + efficiency.</h1>
                     </div>
