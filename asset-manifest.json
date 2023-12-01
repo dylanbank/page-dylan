@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/page-dylan/static/css/main.baf05d88.css",
+    "main.js": "/page-dylan/static/js/main.07b37849.js",
+    "static/media/dylanClimb.jpg": "/page-dylan/static/media/dylanClimb.0711e69b4a7500163388.jpg",
+    "static/media/dylanSki.jpg": "/page-dylan/static/media/dylanSki.5c29ff1c9b97fcee6ba8.jpg",
+    "static/media/coloradoMe.jpg": "/page-dylan/static/media/coloradoMe.a871f0933b9308925b90.jpg",
+    "static/media/dylanpageHero.png": "/page-dylan/static/media/dylanpageHero.dcca8576aebba2ae633a.png",
+    "static/media/dylanGame.jpg": "/page-dylan/static/media/dylanGame.6842edcb0fbce3c22256.jpg",
+    "static/media/nodeLogo.png": "/page-dylan/static/media/nodeLogo.1f11b402ef4ababfedf9.png",
+    "static/media/awsLogo.png": "/page-dylan/static/media/awsLogo.066006239ca2ddb08b85.png",
+    "static/media/navLogo.png": "/page-dylan/static/media/navLogo.d3dee513ba159bbe3dfc.png",
+    "static/media/jsLogo.png": "/page-dylan/static/media/jsLogo.062825dbceed44567e91.png",
+    "static/media/sqlLogo.png": "/page-dylan/static/media/sqlLogo.bc0710f8411221c7e7e2.png",
+    "static/media/pythonLogo.png": "/page-dylan/static/media/pythonLogo.9399e4385b2613411ea8.png",
+    "static/media/cppLogo.png": "/page-dylan/static/media/cppLogo.40a6af569275846773ae.png",
+    "static/media/twitter.png": "/page-dylan/static/media/twitter.798f4e3e66e7edc2fd50.png",
+    "static/media/cssLogo.png": "/page-dylan/static/media/cssLogo.348aac7ce4ffca58f755.png",
+    "static/media/htmlLogo.png": "/page-dylan/static/media/htmlLogo.6ea4d06d4df1aade1da4.png",
+    "static/media/trophy-solid.svg": "/page-dylan/static/media/trophy-solid.2eb9f7d74b44acdbd6e5.svg",
+    "index.html": "/page-dylan/index.html",
+    "static/media/bars-solid.svg": "/page-dylan/static/media/bars-solid.c89397bc1b79ef675961.svg",
+    "static/media/envelope-solid.svg": "/page-dylan/static/media/envelope-solid.637ee93b027865b3e0ba.svg",
+    "static/media/xmark-solid.svg": "/page-dylan/static/media/xmark-solid.2e040518dbf29b3936aa.svg",
+    "static/media/arrow-right-solid.svg": "/page-dylan/static/media/arrow-right-solid.9d3b79ab01ebfb293292.svg",
+    "static/media/arrow-left-solid.svg": "/page-dylan/static/media/arrow-left-solid.23832cab5a91ee880f4f.svg",
+    "main.baf05d88.css.map": "/page-dylan/static/css/main.baf05d88.css.map",
+    "main.07b37849.js.map": "/page-dylan/static/js/main.07b37849.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.baf05d88.css",
+    "static/js/main.07b37849.js"
+  ]
+}
