@@ -214,22 +214,23 @@
 }
 #about-image {
   --b: 5px; /* border thickness */
-  --c: #0000 25%, black 0; /* define the color here */
+  --c: #0000 25%, white 0; /* define the color here */
   padding: 30px;
   background:
     conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--c)) 0    0,
     conic-gradient(from 180deg at top    var(--b) right var(--b),var(--c)) 100% 0,
     conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--c)) 0    100%,
     conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--c)) 100% 100%;
-  background-size: 50px 50px; /* adjust border length here */
+  background-size: 25px 25px; /* adjust border length here */
   background-repeat: no-repeat;
   transition: .6s;
   width: 25vw;
   height: 25vw;
   z-index: 20;
+  border-radius: 8px;
 }
 #about-image:hover{
-  background-size: 25% 25%;
+  background-size: 10% 10%;
 }
 
 .nav{
@@ -302,9 +303,8 @@
   transition: background-color 0.6s;
 }
 .nav-not-top{
-  background-color: black;
-  outline: 2px solid white;
-  box-shadow: 0 0 35px black;
+  
+  //box-shadow: 0 0 35px black;
 }
 .navbar-not-top{
   background-color: black;
@@ -319,7 +319,17 @@
   justify-content: center;
 }
 .nav-selected{
-  background: $neonpurple;
+  --b: 5px; /* border thickness */
+  --c: #0000 25%, white 0; /* define the color here */
+  
+  background:
+    conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--c)) 0    0,
+    conic-gradient(from 180deg at top    var(--b) right var(--b),var(--c)) 100% 0,
+    conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--c)) 0    100%,
+    conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--c)) 100% 100%;
+  background-size: 10px 10px; /* adjust border length here */
+  background-repeat: no-repeat;
+  
 }
 .navText{
   display: flex;
