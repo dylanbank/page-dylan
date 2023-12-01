@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/page-dylan/static/css/main.ec6f7e81.css",
-    "main.js": "/page-dylan/static/js/main.4cabb8df.js",
+    "main.js": "/page-dylan/static/js/main.565ff891.js",
     "static/media/dylanClimb.jpg": "/page-dylan/static/media/dylanClimb.0711e69b4a7500163388.jpg",
     "static/media/dylanSki.jpg": "/page-dylan/static/media/dylanSki.5c29ff1c9b97fcee6ba8.jpg",
     "static/media/coloradoMe.jpg": "/page-dylan/static/media/coloradoMe.a871f0933b9308925b90.jpg",
@@ -25,10 +25,10 @@
     "static/media/arrow-right-solid.svg": "/page-dylan/static/media/arrow-right-solid.9d3b79ab01ebfb293292.svg",
     "static/media/arrow-left-solid.svg": "/page-dylan/static/media/arrow-left-solid.23832cab5a91ee880f4f.svg",
     "main.ec6f7e81.css.map": "/page-dylan/static/css/main.ec6f7e81.css.map",
-    "main.4cabb8df.js.map": "/page-dylan/static/js/main.4cabb8df.js.map"
+    "main.565ff891.js.map": "/page-dylan/static/js/main.565ff891.js.map"
   },
   "entrypoints": [
     "static/css/main.ec6f7e81.css",
-    "static/js/main.4cabb8df.js"
+    "static/js/main.565ff891.js"
   ]
 }
