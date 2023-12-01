@@ -178,6 +178,12 @@
   justify-content: space-between;
   margin-left: 50px;
 }
+.socialsMobile{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
 .socialWrap{
   display: flex; 
   justify-content: center; 

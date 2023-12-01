@@ -11,10 +11,7 @@ export default function Hobbies(){
         function handleResize() {
             
             setMobile(window.innerWidth < 800);
-            if(!mobile){
-                hobbyContainer.scrollLeft = 0;
-                setCurrent(0);
-            } 
+            
         }
         window.addEventListener("resize", handleResize);
         handleResize();

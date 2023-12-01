@@ -120,7 +120,7 @@ export default function Navbar(props){
                         </div>
                     </div>
                 </div>
-                <div className="socials" style={{width: '', gap: '10px'}}>
+                <div className="socialsMobile" style={{width: '', gap: '10px'}}>
                         <div style={{height:'95px', paddingTop:'10px'}}>
                             <a className="socialWrap" href={'https://www.linkedin.com/in/dylan-windebank'}>
                                 <div className="social" style={{backgroundImage: `url(${LI})`}} />
