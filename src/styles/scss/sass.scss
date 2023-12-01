@@ -223,7 +223,7 @@
   z-index: 20;
 }
 #about-image:hover{
-  background-size: 51% 51%;
+  background-size: 25% 25%;
 }
 
 .nav{
@@ -242,8 +242,8 @@
 }
 .mobileNav{
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: 999;
   background: rgba(0,0,0,1);
   padding: 100px 50px;
