@@ -1,3 +1,5 @@
-# Page-Dylan, my portfolio site
+# page-dylan, my portfolio site
 
-## constructed using react.js, still in development (eta November 15)
+live [here](https://dylanbank.github.io/page-dylan/)
+
+constructed using react.js, styled with scss, emails sent using email.js 
