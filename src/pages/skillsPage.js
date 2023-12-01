@@ -130,7 +130,7 @@ export default function Skills(){
                 
                 <div style={{position:'absolute', width:'100%', height:'100%', zIndex: "20", display: 'flex', flexDirection:'column', justifyContent:'center', alignItems:'flexStart'}}>
                     
-                    <h2 style={{marginTop: "20px", marginLeft: '10vw'}}>SKILLS</h2>
+                    <h2 style={ mobile ? {marginTop: "20px", marginLeft: '10vw'} : {marginTop: "20px", marginLeft: '0'} }>SKILLS</h2>
                         
                     <div className="skillWrapper" >
                             <p > &#123; </p> 

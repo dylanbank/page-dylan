@@ -39,20 +39,20 @@ export default function Contact(){
                 <form id='contactForm' ref={form} style={{flexGrow: '4'}}>
                     <div className="flex" style={{width:'100%', gap: '5%', justifyContent: 'flex-start'}}>
                         <div className="formField">
-                            <label><h3>your email</h3></label>
+                            <label><h4>your email</h4></label>
                             <input required name='userEmail' className='formInput' placeholder="" value={info.email} onChange={(e) => setInfo({...info, email: e.target.value})}/>
                         </div>
                         <div className="formField">
-                            <label><h3>your name</h3></label>
+                            <label><h4>your name</h4></label>
                             <input required name='userName' className='formInput' placeholder="" value={info.name} onChange={(e) => setInfo({...info, name: e.target.value})}/>
                         </div>
                         <div className="formField">
-                            <label><h3>subject</h3></label>
+                            <label><h4>subject</h4></label>
                             <input required name='userSubject'className='formInput' placeholder="" value={info.subject} onChange={(e) => setInfo({...info, subject: e.target.value})}/>
                         </div>
                     </div>
                     <div style={{marginTop:'2vh'}}>
-                        <label><h3>content</h3></label>
+                        <label><h4>content</h4></label>
                         <textarea required name='userContent' placeholder="" value={info.content} onChange={(e) => setInfo({...info, content: e.target.value})}/>
                     </div>
                     <div style={{marginTop: '3vh', width:'100%', position: 'relative'}}>

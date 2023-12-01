@@ -243,7 +243,7 @@
 .nav{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   z-index: 999;
   transition: top 1s;
@@ -251,18 +251,78 @@
   position: fixed;
   top: 0;
   gap: 3vw;
-  padding-top: 50px;
+  padding-top: 20px;
+  transition: background-color 0.4s, border-bottom 0s;
+}
+.mobileNav{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: rgba(0,0,0,1);
+  padding: 100px 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mobileMenuWrapper{
+  height: 60px;
+  width: 60px;
+  border-radius: 100px;
+  background-color: white;
+  position: fixed;
+  top:0;
+  right:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  margin-top: 30px;
+  z-index: 9999;
+}
+.mobileMenuIcon{
+  background-image: url('../../assets/icons/bars-solid.svg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 25px;
+}
+.mobileCloseIcon{
+  background-image: url('../../assets/icons/xmark-solid.svg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 25px;
+}
+.navLogo{
+  background-image: url('../../assets/navLogo.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 125px;
+  width: 125px;
+  border-radius: 100px;
+  background-color: transparent;
+  transition: outline, box-shadow 0.4s;
+  transition: background-color 0.6s;
 }
 .nav-not-top{
-  background: $navyPurple;
-  outline: 2px solid $neonpurple;
+  background-color: black;
+  outline: 2px solid white;
   box-shadow: 0 0 35px black;
+}
+.navbar-not-top{
+  background-color: black;
+  border-bottom: 1px solid white;
 }
 .nav-text-con{
   padding: 1vh 2vw;
   border-radius: 8px;
   transition: outline, box-shadow 0.4s;
-  transition: background 0.6s;
+  transition: background-color 0.6s;
   display: flex;
   justify-content: center;
 }
@@ -366,7 +426,7 @@
 }
 .hobby{
   background-size: cover;
-  background-position: center center;
+  background-position: left;
   background-repeat: no-repeat;
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
@@ -390,7 +450,7 @@
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   background-color: $neonpurple;
-  width: 45vw;
+  width: 50vw;
   position: relative;
   flex-shrink:0;
   padding:5vw;
@@ -402,7 +462,7 @@
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   background-color: $neonorange;
-  width: 45vw;
+  width: 50vw;
   position: relative;
   flex-shrink:0;
   padding:5vw;
@@ -482,7 +542,7 @@
     width: 85%;
   }
   .hobbies{
-    padding: 100px 0;
+    padding: 10vh 0;
   }
   .hobby{
     width: 75vw;
@@ -507,9 +567,6 @@
     margin-right: 10vw;
     background-color: rgba(0,0,0,0);
     backdrop-filter: blur(0px);
-  }
-  .skillRender{
-    //display: none;
   }
   .nestedSub{
     margin-left: 7vw;
@@ -554,43 +611,4 @@
     height: 400px;
   }
 }
-@media (max-width: 600px) {
-  h3 {
-    font-family: 'Righteous', cursive;
-    color: $white;
-    display: inline;
-    font-size: 0.8rem;
-    text-align: left;
-    margin: 0px;
-    position: relative;
-    z-index:900;
-  }
-}
 
-@keyframes spin_words{
-  10%{
-    transform: translateY(-112%);
-  }
-  25%{
-    transform: translateY(-100%);
-  }
-  35%{
-    transform: translateY(-212%);
-  }
-  50%{
-    transform: translateY(-200%);
-  }
-  60%{
-    transform: translateY(-312%);
-  }
-  75%{
-    transform: translateY(-300%);
-  }
-  85%{
-    transform: translateY(-412%);
-  }
-  100%{
-    transform: translateY(-400%);
-  }
-
-}
