@@ -33,7 +33,7 @@ export default function Contact(){
 
     return(
         <div className="contact">
-            <h2>CONTACT ME</h2>
+            <h2>CONTACT</h2>
             <div className="flex">
                 <form id='contactForm' ref={form} style={{flexGrow: '4'}}>
                     <div className="flex" style={{width:'100%', gap: '5%', justifyContent: 'flex-start'}}>

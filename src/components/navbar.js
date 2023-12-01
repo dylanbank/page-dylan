@@ -81,7 +81,7 @@ export default function Navbar(props){
                     </div>
                     <div className="navText" onClick={()=>{selectCurrent(4); props.homeProps.ScrollToView('contact')}}>
                         <div className={`nav-text-con ${isTop ? "" : "nav-not-top"} ${current.contact ? "nav-selected" : ""}`}>
-                            <h3>CONTACT ME</h3>
+                            <h3>CONTACT</h3>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@ export default function Navbar(props){
                         </div>
                         <div className="navText" style={{ alignItems: 'normal'}} onClick={()=>{selectCurrent(4); props.homeProps.ScrollToView('contact'); setOpen(false)}}>
                             
-                                <h3>CONTACT ME</h3>
+                                <h3>CONTACT</h3>
                         
                         </div>
                     </div>
