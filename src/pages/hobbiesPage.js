@@ -3,16 +3,21 @@ import { useEffect, useState } from "react";
 
 export default function Hobbies(){
     const [ current, setCurrent ] = useState(1);
-
+    const [ mobile, setMobile ] = useState(window.innerWidth < 800);
     useEffect(()=>{
         const hobbyContainer = document.getElementById('hobbyContainer')
         hobbyContainer.scrollLeft = (hobbyContainer.scrollWidth - hobbyContainer.clientWidth ) / 2;
 
         function handleResize() {
-            hobbyContainer.scrollLeft = 0;
-            setCurrent(0);
+            
+            setMobile(window.innerWidth < 800);
+            if(!mobile){
+                hobbyContainer.scrollLeft = 0;
+                setCurrent(0);
+            } 
         }
         window.addEventListener("resize", handleResize);
+        handleResize();
         return () => window.removeEventListener("resize", handleResize);
     }, [])
 
@@ -55,9 +60,9 @@ export default function Hobbies(){
                             sending the v0 in the corner, this is what i do for something fun and physical.
                         </p>
                     </div>
-                    <div className="hobby climb" style={current === 0 ?{webkitFilter: 'grayscale(0%)', mozFilter: 'grayscale(0%)', filter: 'grayscale(0%)'}: {}}/>
-                    <div className="hobby ski" style={current === 1 ?{webkitFilter: 'grayscale(0%)', mozFilter: 'grayscale(0%)', filter: 'grayscale(0%)'}: {}} />
-                    <div className="hobby game" style={current === 2 ?{webkitFilter: 'grayscale(0%)', mozFilter: 'grayscale(0%)', filter: 'grayscale(0%)'}: {}} />
+                    <div className="hobby climb" style={current=== 0 && !mobile ? {webkitFilter: 'grayscale(0%)', mozFilter: 'grayscale(0%)', filter: 'grayscale(0%)'}: {}}/>
+                    <div className="hobby ski" style={current === 1 && !mobile ? {webkitFilter: 'grayscale(0%)', mozFilter: 'grayscale(0%)', filter: 'grayscale(0%)'}: {}} />
+                    <div className="hobby game" style={current === 2 && !mobile ? {webkitFilter: 'grayscale(0%)', mozFilter: 'grayscale(0%)', filter: 'grayscale(0%)'}: {}} />
                     <div className="rightHobby">
                         <p style={{display: 'block'}}>
                             competitive gaming, specifically on the videogame Rocket League, was my main path of personal growth during my highschool and university days. 

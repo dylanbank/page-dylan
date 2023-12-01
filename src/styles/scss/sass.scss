@@ -537,6 +537,9 @@
   .hobby{
     width: 75vw;
     background-position: left;
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    filter: grayscale(0%);
   }
   .pairWrapper{
     display: none;
