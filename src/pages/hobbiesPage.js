@@ -24,7 +24,7 @@ export default function Hobbies(){
             hobbyContainer.scrollLeft = 0;
         }
         else if(current===2){
-            hobbyContainer.scrollLeft = hobbyContainer.scrollLeftMax/2;
+            hobbyContainer.scrollLeft = (hobbyContainer.scrollWidth - hobbyContainer.clientWidth)/2;
         }
         if(current !== 0){
             setCurrent(prevState => prevState-1);
@@ -32,12 +32,11 @@ export default function Hobbies(){
     }
     const scrollRight = () => {
         const hobbyContainer = document.getElementById('hobbyContainer');
-        hobbyContainer.scrollLeft += hobbyContainer.scrollLeftMax/2;
         if(current===0){
-            hobbyContainer.scrollLeft = hobbyContainer.scrollLeftMax/2;
+            hobbyContainer.scrollLeft = (hobbyContainer.scrollWidth - hobbyContainer.clientWidth)/2;
         }
         else if(current===1){
-            hobbyContainer.scrollLeft = hobbyContainer.scrollLeftMax;
+            hobbyContainer.scrollLeft = hobbyContainer.scrollWidth - hobbyContainer.clientWidth;
         }
         if(current !== 2){
             setCurrent(prevState => prevState+1);
