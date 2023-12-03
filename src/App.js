@@ -20,12 +20,16 @@ function App() {
     <div className="App">
       <Intro ScrollToView={ScrollToView} />
       <div id="about" />
+      <div style={{ height: '10vh', backgroundColor: "#7017fc"}}/>
       <About />
       <div id="skills" />
+      <div style={{ height: '10vh'}}/>
       <Skills />
       <div id="hobbies" />
+      <div style={{ height: '10vh'}}/>
       <Hobbies />
       <div id="contact" />
+      <div style={{ height: '10vh'}}/>
       <Contact />
     </div>
   );
