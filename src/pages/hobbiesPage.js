@@ -65,25 +65,6 @@ export default function Hobbies(){
             </div>
             <div style={{display: 'flex', justifyContent: 'center'}}>
                 <div id="hobbyGallery">
-                    <div className="pairWrapper">
-                        <div className='btnPair'>
-                            
-                                <h3 id="arrow" onClick={scrollLeft} style={current===0 ? {opacity: '0.2', cursor: 'auto'}: {}}>{"<="}</h3>
-                            
-                            
-                                <h3 id="arrow" onClick={scrollRight} style={current===2 ? {opacity: '0.2', cursor: 'auto'}: {}}>{"=>"}</h3>
-                            
-
-                        </div>
-                        <div style={{position: 'relative'}}>
-                            <div id ="hobbyGradient" />
-                            <div id="hobbyLabels" style={{transform: `translateX(${tX}%)`}}>
-                                <h2 className="hobbyLabel">climbing</h2>
-                                <h2 className="hobbyLabel">skiing</h2>
-                                <h2 className="hobbyLabel">gaming</h2>
-                            </div>
-                        </div>
-                    </div>
                     <div id="hobbyContainer" >
                         {/*}
                         <div className="leftHobby">
@@ -110,7 +91,25 @@ export default function Hobbies(){
                         </div>
     */}
                     </div>
-                    
+                    <div className="pairWrapper">
+                        <div className='btnPair'>
+                            
+                                <h3 id="arrow" onClick={scrollLeft} style={current===0 ? {opacity: '0.2', cursor: 'auto'}: {}}>{"<="}</h3>
+                            
+                            
+                                <h3 id="arrow" onClick={scrollRight} style={current===2 ? {opacity: '0.2', cursor: 'auto'}: {}}>{"=>"}</h3>
+                            
+
+                        </div>
+                        <div style={{position: 'relative'}}>
+                            <div id ="hobbyGradient" />
+                            <div id="hobbyLabels" style={{transform: `translateX(${tX}%)`}}>
+                                <h2 className="hobbyLabel">climbing</h2>
+                                <h2 className="hobbyLabel">skiing</h2>
+                                <h2 className="hobbyLabel">gaming</h2>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
