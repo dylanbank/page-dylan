@@ -378,13 +378,22 @@
 }
 #hobbyContainer{
   display: flex;
-  height: 35vw; 
-  gap: 5vw;
-  margin-top: 30px;
+  height: 30vw; 
+  
   overflow-x: hidden;
   position: relative;
   scroll-behavior: smooth;
   align-items: center;
+}
+#hobbyGallery{
+  width: 45vw;
+  --b: 5px;
+  --c: #0000 25%,white 0;
+  background: conic-gradient(from 90deg at top var(--b) left var(--b),var(--c)) 0 0,conic-gradient(from 180deg at top var(--b) right var(--b),var(--c)) 100% 0,conic-gradient(from 0deg at bottom var(--b) left var(--b),var(--c)) 0 100%,conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--c)) 100% 100%;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  padding: 30px;
+  margin-top: 30px;
 }
 .hobbiesH2{
   margin: 0 15vw;
@@ -393,29 +402,63 @@
 }
 #leftArrow{
   height: 50px;
-  width: 50px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: url('../../assets/icons/arrow-left-solid.svg');
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  cursor: pointer;
 }
 #rightArrow{
   height: 50px;
-  width: 50px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: url('../../assets/icons/arrow-right-solid.svg');
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  cursor: pointer;
 }
 .btnPair{
   display: flex;
+  gap: 5vw;
 }
 .pairWrapper{
   display: flex;
-  justify-content:center;
-  margin-top: -95px;
+  justify-content:space-between;
+  align-items: center;
+  background-color: white;
   z-index: 30;
   position: relative;
+  padding: 2vw;
+  overflow: hidden;
+}
+#arrow{
+  font-size: 2vw;
+  cursor: pointer;
+  user-select: none;
+  color: black;
+}
+
+#hobbyGradient{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  background: linear-gradient(to right, rgba(255,255,255,1) 40%, rgba(0,0,0,0) 80%);
+  z-index: 30;
+}
+#hobbyLabels{
+  display: flex;
+  gap: 2vw;
+  z-index: 20;
+  position: relative;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  transition: all 0.5s;
+}
+.hobbyLabel{
+  font-size: 2vw;
+  color: black;
 }
 .hobby{
   background-size: cover;
@@ -425,11 +468,10 @@
   -moz-filter: grayscale(100%);
   filter: grayscale(100%);
   height: 100%;
-  width: 40vw;
+  width: 45vw;
   transition: all 0.5s ease-in;
   position: relative;
   flex-shrink:0;
-  border-radius: 25px;
   z-index: 20;
 
 }
@@ -546,14 +588,20 @@
   .hobbies{
     padding: 10vh 0;
   }
+  
   .hobby{
-    width: 75vw;
-    background-position: left;
+    width: 250px;
+    //background-position: left;
     -webkit-filter: grayscale(0%);
     -moz-filter: grayscale(0%);
     filter: grayscale(0%);
+    scroll-snap-align: start;
+  }
+  #hobbyGallery{
+    width: 250px;
   }
   .pairWrapper{
+
     display: none;
   }
   .closedBracket{
@@ -610,9 +658,10 @@
 
   }
   #hobbyContainer{
-    height: 400px;
+    height: 250px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: y mandatory;
   }
 }
 
